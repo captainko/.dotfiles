@@ -1,0 +1,13 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/cko/.local/src/neovim
+- /home/cko/.dotfiles
+- /home/cko/.config/nvim
+- /media/cko/code/code/Projects/Horizon
+- /home/cko/.local/src/alacritty
+- /home/cko/.local/share/nvim/site/pack/packer/opt/toggleterm.nvim
+- /home/cko/.config
+- /home/cko/.local/src/flameshot
+- /home/cko/plugins/CaptainKO/refactoring.nvim
+- /home/cko/.config/tmux
+startuppopupversion: 5

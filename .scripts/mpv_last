@@ -1,0 +1,19 @@
+#!/bin/sh
+#shopt -s lastpipe
+#grep -Po '\[\K[^\]]*' ~/.local/share/zathura/history | readarray -t files
+#echo "${files[@]}"
+
+#selected=$(grep -Po '\[\K[^\]]*' ~/.local/share/zathura/history | dmenu -i -l 30)
+selected=$(find ~/Downloads -type f \( -name '*.mp4' -o -name '*.mkv' \) -printf '%A@ %p\0' |\
+	sort -zk 1nr |\
+	sed -z 's/^[^ ]* //' |\
+	tr '\0' '\n' | dmenu -i -l 30)
+# exit if nothing is selected
+[ -z "$selected" ] && exit
+[ ! -f "$selected" ] && notify-send "$selected not found!" && exit
+
+mpv "$selected" 2>/dev/null &
+exit
+
+
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sink=$(select_output_sink)
+
+[[ -z $sink ]] && exit 0
+
+if [ -z "$1" ]; then
+	pacmd list-sink-inputs |
+		awk '/index:/ { printf("%s\n",$2) }' |
+		xargs -I{} pactl move-sink-input {} "$sink"
+	pacmd set-default-sink "$sink"
+else
+	pacmd move-sink-input "$1" "$sink"
+fi

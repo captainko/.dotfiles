@@ -1,0 +1,29 @@
+# Open program
+
+# Screenshot
+Print
+	flameshot full -p ~/Pictures
+
+ctrl + Print
+	flameshot full -c
+
+ctrl + shift + Print
+	flameshot full -c
+
+shift + Print
+	flameshot gui -p ~/Pictures
+
+ctrl + alt + Print
+	flameshot screen -c
+
+alt + Print
+	flameshot screen -p ~/Pictures
+
+# ~ Screenshot
+
+super + o ; {e, f, shift +f , z, b, c, w, m }
+	{ emulators, firefox, firecamp, ebook-viewer --continue, blender, code, bluetooth_switch, mpv_last }
+super + { bracketleft, bracketright, backslash }
+	playerctl { previous, next, play-pause }
+super + a ; { a, s, d }
+	{ switch_audio_output, switch_app_audio_output, switch_default_audio_output }

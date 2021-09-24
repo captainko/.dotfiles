@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo ss -lptn "sport = $1"
+exit 0

@@ -1,0 +1,1 @@
+/home/cko/.local/src/zsh-dracula-theme/dracula.zsh-theme

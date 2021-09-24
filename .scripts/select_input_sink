@@ -1,0 +1,10 @@
+#!/bin/bash
+
+selected=$(
+	pacmd list-sources |
+		awk -F' ' '/index:/ { if ($2 != "index:" ) printf("%s.", $2); else printf("*%s.", $3) } $1=="device.description" {gsub("\"", ""); for (i=3; i<=NF; i++)     {  ;printf($i); if ($i == $NF) printf("\n") ; else printf(" ");}}' |
+		dmenu -l 10
+)
+selected=${selected%%.*}
+selected=${selected#\*}
+echo "$selected"

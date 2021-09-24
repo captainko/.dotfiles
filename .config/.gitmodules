@@ -1,0 +1,13 @@
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:CaptainKO/ckovim.git
+[submodule "tmux"]
+	path = tmux
+	url = git@github.com:CaptainKO/cko_tmux.git
+[submodule "zsh/lib/zsh-git-prompt"]
+	path = zsh/lib/zsh-git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
+[submodule "zsh/lib/zsh-autosuggestions"]
+	path = zsh/lib/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+

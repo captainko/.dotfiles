@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -z "$TMUX" ]; then
+	tmux new-session \; split-window -h -p 25 \; split-window -v -p 66 \; split-window -v \; select-pane -t 2
+else
+	tmux split-window -h -p 25 \; split-window -v -p 66 \; split-window -v \; select-pane -t 2
+fi

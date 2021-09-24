@@ -1,0 +1,11 @@
+#!/bin/sh
+app=$(
+	pacmd list-sink-inputs |
+		awk '/index:/ { printf("%s.",$2) } $1 == "application.name" {gsub("\"","",$3);printf("%s\n", $3) }' |
+		dmenu -l 4
+)
+app=${app%%.*}
+
+[ -z $app ] && exit 0
+
+switch_audio_output $app

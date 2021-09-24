@@ -1,0 +1,21 @@
+#!/bin/sh
+downloads=/home/cko/Downloads
+ebooks=~/Documents/ebooks/
+epubs="$ebooks"/epub
+pdfs="$ebooks"/pdf
+isos=~/Downloads/ISO
+
+[ ! -f "$epubs" ] && mkdir -p "$epubs"
+[ ! -f "$pdfs" ] && mkdir -p "$pdfs"
+[ ! -f "$isos" ] && mkdir -p "$isos"
+
+find "${downloads}" -maxdepth 1 -type f -name "*(z-lib.org).pdf" \
+	-exec mv -t "${pdfs}" {} +
+find "${downloads}" -maxdepth 1 -type f -name "*.epub" \
+	-exec mv -t "${epubs}" {} +
+find "${downloads}" -maxdepth 1 -type f -name "*.iso" \
+	-exec mv -t "${isos}" {} +
+
+# remove old-ass files
+
+find "$downloads" -maxdepth 1 -type f -atime +30 -delete

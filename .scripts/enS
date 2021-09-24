@@ -1,0 +1,5 @@
+#!/bin/sh
+for f in ~/.scripts/*; do
+	echo "$f"
+	chmod +x "$f"
+done

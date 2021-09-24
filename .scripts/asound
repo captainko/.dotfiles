@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -euo pipefail
+
+opt_choose_file="Choose a sound file"
+opt_play_rand="Play random sound"
+opt_stop_player="Stop sound player"
+opt_quit="Quit"
+
+opts="$opt_choose_file
+$opt_play_rand
+$opt_stop_player
+$opt_quit"
+
+sound_dir=$HOME/.scripts/data/asounds
+sound_files=$(find "$sound_dir" -iname "*.mp3" -printf "%f\n")
+
+choice=$(echo "$opts" | dmenu -i -l 7 -p 'Ambient sounds:' "${@}")
+
+title="ambient-sound"
+
+# If user chooses a sound file.
+if [ "$choice" == "$opt_choose_file" ]; then
+	choice=$(
+		echo "$sound_files" |
+			sort |
+			dmenu -i -l 20 -p 'Choose sound file:' "$@"
+	)
+	mpv --title="$title" --loop "$sound_dir/$choice" || exit
+
+# If user chooses to play a random sound.
+elif [ "$choice" == "$opt_play_rand" ]; then
+	getRand=$(echo "$sound_files" | shuf -n 1)
+	mpv --title="$title" --loop "$sound_dir/$getRand" || exit
+
+# If user chooses to stop sound playing.
+elif [ "$choice" == "$opt_stop_player" ]; then
+	pkill -f "$title"
+
+# What to do if we just escape without choosing anything.
+else
+	echo "Program terminated." && exit 0
+fi

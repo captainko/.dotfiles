@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# cmd='split-window -v -p 30 \; select-pane -t 0 \;'
+if [ -z "$TMUX" ]; then
+	tmux new-session \; split-window -v -p 38 \; select-pane -t 0 \;
+else
+	tmux split-window -v -p 38 \; select-pane -t 0 \;
+fi

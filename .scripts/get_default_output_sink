@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sinkId=$(pacmd list-sinks | grep "* index" | cut -d" " -s -f 5)
+echo $sinkId

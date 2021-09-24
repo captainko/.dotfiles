@@ -1,0 +1,4 @@
+#!/bin/sh
+
+emulator=$(emulator -list-avds | dmenu -i -l 4)
+emulator @"$emulator" &

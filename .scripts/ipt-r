@@ -1,0 +1,10 @@
+#!/bin/bash 
+BACKUP_FILE=/tmp/ip_table_backup
+[ $EUID != 0 ] && sudo "$0" "$@"
+iptables --flush
+[ ! -f $BACKUP_FILE ] && echo "The backup file doesn't exist" ; exit 1
+sudo iptables-restore < sudo cat $BACKUP_FILE
+
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT

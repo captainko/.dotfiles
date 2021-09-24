@@ -1,0 +1,7 @@
+os:
+  editCommand: "nvim" # as an example
+git:
+  paging:
+    colorArg: always
+    # useConfig: true
+    pager: delta --dark --paging=never --syntax-theme=gruvbox-dark

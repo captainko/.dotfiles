@@ -1,0 +1,15 @@
+\set PROMPT1 '%M:%[%033[0;35m%]%>%[%033[0m%] %[%033[1;33m%]%n%[%033[1;32m%]@%[%033[1;34m%]%/%[%033[1;37m%]%R%#%x%[%033[0m%] '
+\set PROMPT2 '%M %[%033[1;33m%]%n%[%033[1;32m%]@%[%033[1;34m%]%/%[%033[1;37m%]%R%#%[%033[0m%] '
+
+\x auto
+
+\set COMP_KEYWORD_CASE upper
+\set VERBOSITY verbose
+\set HISTSIZE 2000
+\set HISTCONTROL ignoredups
+
+\pset null '(NULL)'
+\timing on
+
+-- set qstats92 ' SELECT usename, datname, left(query,100) || ''...'' As query FROM pg_stat_activity WHERE state != ''idle'' ; 'set qstats92 ' SELECT usename, datname, left(query,100) || ''...'' As query FROM pg_stat_activity WHERE state != ''idle'' ; '
+\unset QUIET

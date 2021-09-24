@@ -1,0 +1,8 @@
+#!/bin/sh
+term=${1:-$(xclip -selection c -o)}
+
+if [ -z "$term" ]; then
+	term="$(!:$)"
+fi
+
+trans :vi -sp "$term"

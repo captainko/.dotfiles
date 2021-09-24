@@ -1,0 +1,4 @@
+#!/bin/bash
+[ "$EUID" != 0 ] && sudo "$0" "$@"
+sudo find /var/www/html \( -type f -execdir chmod 644 {} \; \) \
+	-o \( -type d -execdir chmod 711 {} \; \)

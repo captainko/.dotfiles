@@ -1,0 +1,8 @@
+#!/bin/bash
+wallpaper_dir="$HOME"/Pictures/wallpapers
+files=($wallpaper_dir/*)
+random_pic=`printf "%s\n" "${files[RANDOM % ${#files[@]}]}"`
+PID=$(pgrep -u "$LOGNAME" gnome-session)
+export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS "/proc/$PID/environ" | cut -d= -f2-)
+gsettings set org.gnome.desktop.background picture-uri file://"$random_pic" &>/dev/null
+notify-send -i "$random_pic" "Wallpaper has changed" &

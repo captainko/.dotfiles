@@ -1,0 +1,18 @@
+#!/bin/bash
+GLOBIGNORE=*.mp4
+
+if [ -n "$1" ] ; then
+	echo "$1"
+	 # ffmpeg -y -hwaccel cuda -i "$1" -vcodec mjpeg -q:v 2 -acodec pcm_s16be -q:a 0     -f mov "${1%.*}.mov"
+    ffmpeg -y -i "$1" -vcodec copy -acodec copy "${1%.*}.mp4"
+	exit 0
+fi
+
+for i in *;do
+    echo "$i"
+	#ffmpeg -y -hwaccel cuda -i "$i" -vcodec mjpeg -q:v 2 -acodec pcm_s16be -q:a 0 -f mov "${i%.*}.mov"
+    ffmpeg -y -i "$i"  -q:v 0 "${i%.*}.mp4"
+#ffmpeg -y -i "$i" -vcodec dnxhd -acodec pcm_s16le -pix_fmt yuv422p -f mov "${i%mp4}.mov"
+
+done
+

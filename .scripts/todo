@@ -1,0 +1,6 @@
+#!/bin/sh
+file=$(find ~/Documents/org -type f -name '*.dotoo' |
+	fzf --reverse --height 40%)
+if [ ! -z $file ]; then
+	vim "$file"
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+BACKUP_FILE="/tmp/ip_table_backup"
+
+[ $EUID != 0 ] && sudo "$0" "$@"
+
+[ ! -f $BACKUP_FILE ] && touch $BACKUP_FILE && sudo chmod a+rw $BACKUP_FILE
+sudo iptables-save | sudo tee $BACKUP_FILE >/dev/null 2>&1

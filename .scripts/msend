@@ -1,0 +1,6 @@
+#!/bin/sh
+file="$1"
+echo $file
+id=$(kdeconnect-cli -a --id-only)
+
+kdeconnect-cli -d $id --share "$file"

@@ -1,0 +1,5 @@
+#/bin/sh
+
+termdown 5m
+notify-send -a "5 minutes alarm" "LOL"
+mpv ~/.local/share/sounds/__custom/100-degrees.mp3 --really-quiet

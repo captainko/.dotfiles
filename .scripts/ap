@@ -1,0 +1,9 @@
+#!/bin/bash
+I=$1
+AP=$2
+PW=$3
+[ ! -z "$I" ] || I='wlan0'
+[ ! -z "$AP" ] || AP='cko'
+[ ! -z "$PW" ] || PW='@@123456'
+
+sudo create_ap "$I" "$I" "$AP" "$PW"

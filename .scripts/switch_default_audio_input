@@ -1,0 +1,9 @@
+#!/bin/bash
+sink=$1
+
+if [[ -z $sink ]]; then
+	sink=$(select_input_sink)
+fi
+
+[[ -z $sink ]] && exit 0
+pacmd set-default-source "$sink"

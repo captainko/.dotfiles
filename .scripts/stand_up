@@ -1,0 +1,3 @@
+#!/bin/bash
+MIN=20
+notify-send "Stand Up Please" "It's been $MIN minutes" &

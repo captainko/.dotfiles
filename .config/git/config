@@ -1,0 +1,31 @@
+[user]
+	email		= thongnguyen.uit@gmail.com
+	name		= captainko
+[core]
+	editor		= nvim
+	pager		= delta
+[rebase]
+	autosquash	=true
+[alias]
+	caa	= "commit -a --amend -C HEAD"
+	cf	= "config --local -e"
+	cfg	= "config --global -e"
+	cl 	= "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
+	; cl 	= "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))' --color=always"
+	clnm 	= "cl --no-merged"
+	st 	= "status -sb"
+	pop 	= "stash pop"
+	sp 	= "stash pop"
+	ll 	= "log --oneline --no-merges"
+	upushed	= "log --branches --not --remotes --no-walk --decorate --oneline"
+	which	= "!git branch -a | grep -i"
+	lucky	= "!sh -c `git checkout $(git which $1 -m1)` -"
+	standup	= "!git log --all --since=yesterday.9:00am --format=%s"
+[delta]
+	line-numbers	    = true
+	syntax-theme	    = gruvbox-dark
+	side-by-side	    = false
+	file-modified-label = modified:
+[interactive]
+	diffFilter = delta --color-only
+# vim:set noet sts=2 sw=8 ts=8:

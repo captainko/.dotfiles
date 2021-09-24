@@ -1,0 +1,10 @@
+#!/bin/sh
+
+layout_path="$HOME/.config/i3/layouts/"
+layout=$(ls "$layout_path" | dmenu -l 10)
+[ -z layout ] && exit 0
+
+workspace=$(echo '1\n2\n3\n4\n5\n6\n7\n8\n9\n10' | dmenu -l 10)
+[ -z workspace ] && exit 0
+
+i3-msg "workspace ${workspace}; append_layout $layout_path${layout}"

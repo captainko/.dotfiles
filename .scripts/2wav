@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	ffmpeg -y -i "$f" "${f%.}.wav"
+	exit 0
+fi
+
+pidArr=()
+for f in *;
+do 
+	ffmpeg -y -i "$f" "${f%.}.wav" &
+	pidArr+=($!) 
+done
+
+wait ${pidArr[@]}
+
