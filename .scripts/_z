@@ -1,54 +1,54 @@
-#!/bin/sh
+#!/bin/bash
 
-SList=(
+# shortcuts lists
+s_list=(
 
-    # ==============================================================================
-    # Code
-    # ==============================================================================
+	# ==============================================================================
+	# Code
+	# ==============================================================================
 
-    "7:$HOME/code/Projects/quany7a/"
-    "7a:$HOME/code/Projects/quany7a/api/"
-    "a:$HOME/code/Projects/clubv/Server/api/"
-    "at:$HOME/code/node_projects/angular-test"
-    "go:$HOME/code/go_projects/"
-    "pg:$HOME/code/psg_project/learning"
-    "no:$HOME/code/node_projects/notion-ts"
-    "w:$HOME/code/Projects/Horizon/src/web/WebHorizon"
+	"7:$HOME/code/Projects/quany7a/"
+	"7a:$HOME/code/Projects/quany7a/api/"
+	"a:$HOME/code/Projects/clubv/Server/api/"
+	"at:$HOME/code/node_projects/angular-test"
+	"go:$HOME/code/go_projects/"
+	"pg:$HOME/code/psg_project/learning"
+	"no:$HOME/code/node_projects/notion-ts"
+	"w:$HOME/code/Projects/Horizon/src/web/WebHorizon"
 
+	# ==============================================================================
+	# Sources
+	# ==============================================================================
 
-    # ==============================================================================
-    # Sources
-    # ==============================================================================
-    "sr:$HOME/.local/src"
+	"sr:$HOME/.local/src"
 
-    # ==============================================================================
-    # Documents
-    # ==============================================================================
+	# ==============================================================================
+	# Documents
+	# ==============================================================================
 
-    "doc:$HOME/Documents"
-    "eb:$HOME/Documents/ebooks/"
-    "l:$HOME/Documents/Latex"
-    "or:$HOME/Documents/org"
-    "q:$HOME/Documents/queries"
+	"doc:$HOME/Documents"
+	"eb:$HOME/Documents/ebooks/"
+	"l:$HOME/Documents/Latex"
+	"or:$HOME/Documents/org"
+	"q:$HOME/Documents/queries"
 
-    # ==============================================================================
-    # dot files
-    # ==============================================================================
+	# ==============================================================================
+	# dot files
+	# ==============================================================================
 
-    "n:$HOME/.local/src/neovim"
-    "s:$HOME/.scripts/"
-    "v:$HOME/.config/nvim"
+	"n:$HOME/.local/src/neovim"
+	"s:$HOME/.scripts/"
+	"v:$HOME/.config/nvim"
 )
 
 # Loop over shortcuts
-for s in ${SList[@]}
-do
-    # check sub-list if available
-    if [[ $s == *":"* ]]; then
-        prefix="${s%:*}"
-        suffix="${s#*:}"
+for s in "${s_list[@]}"; do
+	# check sub-list if available
+	if [[ $s == *":"* ]]; then
+		prefix="${s%:*}"
+		suffix="${s#*:}"
 
-        # e.g ze="cd ~/exmaples"
-        alias z"$prefix"="cd $suffix"
-    fi
+		# e.g ze="cd ~/example"
+		alias "z$prefix=cd $suffix"
+	fi
 done
