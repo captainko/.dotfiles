@@ -1,6 +1,7 @@
-# Open program
-
+# ==============================================================================
 # Screenshot
+# ==============================================================================
+
 Print
 	flameshot full -p ~/Pictures
 
@@ -19,7 +20,10 @@ ctrl + alt + Print
 alt + Print
 	flameshot screen -p ~/Pictures
 
-# ~ Screenshot
+
+# ==============================================================================
+# Open Program
+# ==============================================================================
 
 super + o ; {e, f, shift +f , z, b, c, w, m }
 	{ emulators, firefox, firecamp, ebook-viewer --continue, blender, code, bluetooth_switch, mpv_last }
