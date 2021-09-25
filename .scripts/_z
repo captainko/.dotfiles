@@ -36,6 +36,7 @@ s_list=(
 	# dot files
 	# ==============================================================================
 
+	"d:$HOME/.dotfiles"
 	"n:$HOME/.local/src/neovim"
 	"s:$HOME/.scripts/"
 	"v:$HOME/.config/nvim"
