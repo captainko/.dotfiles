@@ -6,11 +6,9 @@ if [ -z "$1" ]; then
 fi
 
 pidArr=()
-for f in *;
-do 
+for f in *; do
 	ffmpeg -y -i "$f" "${f%.}.wav" &
-	pidArr+=($!) 
+	pidArr+=($!)
 done
 
 wait ${pidArr[@]}
-

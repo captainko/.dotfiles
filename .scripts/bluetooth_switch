@@ -3,7 +3,7 @@ rfkill unblock bluetooth
 bluetoothctl --timeout 1 scan on
 dev=$(bluetoothctl devices | sed -n -e 's/^Device //p' | dmenu -l 30 | grep -Eo '^[^ ]+')
 
-bluetoothctl connect $dev && {
+bluetoothctl connect "$dev" && {
 	notify-send "Connect to $dev successfully!" &
 	exit
 }
