@@ -134,8 +134,12 @@ schemes:
 
 colors: *gruvbox_dark
 
+# use cmd: show-key --ascii to get the keycode
+# and following this instruction @see https://stackoverflow.com/questions/19062315/how-do-i-find-out-what-escape-sequence-my-terminal-needs-to-send
 key_bindings:
+  - { key: Grave, mods: Control, chars: "\x1b[96;5u" } # <C-`>
   - { key: Space, mods: Control, chars: "\x00" }
   - { key: Return, mods: Shift, chars: "\x1b[13;2u" }
   - { key: Return, mods: Control, chars: "\x1b[13;5u" }
+  - { key: Return, mods: Control|Shift, chars: "\x1b[13;6u" }
   - { key: N, mods: Control|Shift, action: SpawnNewInstance }
