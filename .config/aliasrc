@@ -1,6 +1,8 @@
 #!/bin/sh
 # quickly navigate to projects
 . "$HOME/.scripts/_z"
+
+# ls="exa -lah" \
 alias aptu="sudo apt update" \
 	aptug="sudo apt upgrade" \
 	less="less -XR" \
@@ -9,7 +11,7 @@ alias aptu="sudo apt update" \
 	gh='history|grep' \
 	lst="!:0" \
 	ls="ls --color=yes -lah --group-directories-first" \
-	ll="ls | less" \
+	ll="ls --color=yes -lah | less -R" \
 	lsa="ls -la" \
 	df="df -h" \
 	mx='cmatrix -C magenta' \
