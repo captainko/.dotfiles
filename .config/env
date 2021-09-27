@@ -11,21 +11,24 @@ export LESS_TERMCAP_ue=$'\e[0m'      # reset underline
 # export GROFF_NO_SGR=1                 # for konsole and gnome-terminal
 # export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 # export LESS=' -R '
-PATH="$PATH:$HOME/.config/emacs/bin/"
+PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin/"
 # emacs
 
 # custom env
 # docker
-export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
-export MACHINE_STORAGE_PATH="$XDG_DATA_HOME"/docker-machine
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
+# rust
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 # go
-GOPATH="$XDG_DATA_HOME"/go
+GOPATH="$XDG_DATA_HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOPATH=$GOPATH:"$HOME"/Documents/go_projects
 PATH=$PATH:/usr/local/go/bin:$GOBIN
 # deno
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
 PATH="$DENO_INSTALL/bin:$PATH"
+
 # wine
 #[ ! -d "$XDG_DATA_HOME/wineprefixes" ] && mkdir -p "$XDG_DATA_HOME"/wineprefixes
 #export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
@@ -35,45 +38,44 @@ export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 # wget
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-[ ! -f "$XDG_CONFIG_HOME"/wgetrc ] && echo hsts-file = "$XDG_CACHE_HOME"/wget-hsts >>"$XDG_CONFIG_HOME"/wgetrc
+[ ! -f "$XDG_CONFIG_HOME"/wgetrc ] && echo hsts-file = "$XDG_CACHE_HOME/wget-hsts" >>"$XDG_CONFIG_HOME/wgetrc"
 
 # nvidia
-export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME/nvidia/settings"'
 
 # npm
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 PATH="$PATH:./node_modules/.bin/"
 
 # less
-export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
-export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
-[ ! -d "$XDG_CACHE_HOME"/less ] && mkdir -p "$XDG_CACHE_HOME"/less
+export LESSKEY="$XDG_CONFIG_HOME/less/lesskey"
+export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
+[ ! -d "$XDG_CACHE_HOME/less" ] && mkdir -p "$XDG_CACHE_HOME/less"
 # export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 # export LESS=' -R '
 
 # input
-export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
-[ ! -d "$XDG_CONFIG_HOME"/readline ] && mkdir "$XDG_CONFIG_HOME"/readline
-touch "$INPUTRC"
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+[ ! -d "$XDG_CONFIG_HOME/readline" ] && mkdir "$XDG_CONFIG_HOME/readline" && touch "$INPUTRC"
 
 # nuget
-export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
+export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 
 # gnu
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # java
 # export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 # export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
 # gradle
-export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 # android
-export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
+export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 #export ADB_VENDOR_KEY="$XDG_CONFIG_HOME"/android
 #export ADB_VENDOR_KEYS="$XDG_CONFIG_HOME"/android
 # android-studio
-export ANDROID_HOME=$HOME/.tools/Android/sdk
+export ANDROID_HOME="$HOME/.tools/Android/sdk"
 PATH="$PATH:$ANDROID_HOME/emulator"
 PATH="$PATH:$ANDROID_HOME/tools"
 PATH="$PATH:$ANDROID_HOME/tools/bin"
@@ -92,7 +94,7 @@ export CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/cmake/
 
 # flutter
 PATH="$PATH:$HOME/.local/src/flutter/bin"
-# fluter-pub
+# flutter-pub
 PATH="$PATH:$HOME/.pub-cache/bin"
 
 # mssql
@@ -129,11 +131,9 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 # VScode
 export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 
-# NeoVim LSP
-
 # Chrome Bin
 export CHROME_BIN=/usr/bin/brave-browser-stable
-export UNCRUSTIFY_CONFIG=$XDG_CONFIG_HOME/uncrustify/.cfg
+export UNCRUSTIFY_CONFIG="$XDG_CONFIG_HOME/uncrustify/.cfg"
 
 # finally
 export PATH="$PATH"
