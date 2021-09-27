@@ -42,11 +42,15 @@ sxhkd &
 #setxkbmap -option "caps:swapescape" &
 #setxkbmap -option caps:escape
 #setxkbmap -option escape:caps
-. "$HOME/.cargo/env"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if [ -s "$HOME/.rvm/scripts/rvm" ]; then
+	. "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
 setxkbmap -option caps:escape
 xset r rate 200 80
+. "$XDG_DATA_HOME/cargo/env"
+#. "$XDG_CONFIG_HOME/env"
