@@ -136,6 +136,27 @@ colors: *gruvbox_dark
 
 # use cmd: show-key --ascii to get the keycode
 # and following this instruction @see https://stackoverflow.com/questions/19062315/how-do-i-find-out-what-escape-sequence-my-terminal-needs-to-send
+
+#   Code     Modifiers
+# ---------+---------------------------
+#    2     | Shift
+#    3     | Alt
+#    4     | Shift + Alt
+#    5     | Control
+#    6     | Shift + Control
+#    7     | Alt + Control
+#    8     | Shift + Alt + Control
+#    9     | Meta
+#    10    | Meta + Shift
+#    11    | Meta + Alt
+#    12    | Meta + Alt + Shift
+#    13    | Meta + Ctrl
+#    14    | Meta + Ctrl + Shift
+#    15    | Meta + Ctrl + Alt
+#    16    | Meta + Ctrl + Alt + Shift
+# ---------+---------------------------
+# sources https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#:~:text=as%20a%20parameter.-,Code,-Modifiers
+
 key_bindings:
   - { key: Grave, mods: Control, chars: "\x1b[96;5u" } # <C-`>
   - { key: Space, mods: Control, chars: "\x00" }
