@@ -2,7 +2,7 @@
 # quickly navigate to projects
 . "$HOME/.scripts/_z"
 
-# ls="exa -lah" \
+# ls="ls --color=yes -lah --group-directories-first" \
 alias aptu="sudo apt update" \
 	aptug="sudo apt upgrade" \
 	less="less -XR" \
@@ -10,13 +10,13 @@ alias aptu="sudo apt update" \
 	pd="cd ~-" \
 	gh='history|grep' \
 	lst="!:0" \
-	ls="ls --color=yes -lah --group-directories-first" \
-	ll="ls --color=yes -lah | less -R" \
+	ls="exa -lah" --group-directories-first \
+	ll="ls --color=always -lah | less -R" \
 	lsa="ls -la" \
 	df="df -h" \
 	mx='cmatrix -C magenta' \
-	setclip='xclip -sel clip' \
-	getclip='xclip -selection c -o' \
+	sclip='xclip -sel clip' \
+	gclip='xclip -selection c -o' \
 	fh='nohup nautilus . &>/dev/null & ; clear;' \
 	t='tmux' \
 	tk='tmux kill-server' \
