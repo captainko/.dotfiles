@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ -z "$REPO_ROOT_DIR" ]; then
+	REPO_ROOT_DIR="$(git rev-parse --show-toplevel)"
+fi
+
+format_html() {
+	git diff --cached --name-only --diff-filter=ACMR -- '*.html' |
+		sed -e 's/ /\\ /g' -e "s;.*;$REPO_ROOT_DIR/&;" |
+		xargs -I {} -- sh -c "html-beautify --max-preserve-newlines 20 --wrap-line-length 120 --editorconfig -r '{}' && git add {}"
+
+	return $?
+}
+
+format_html
