@@ -25,8 +25,8 @@ alt + Print
 # Open Program
 # ==============================================================================
 
-super + o ; {e, f, shift +f , z, b, c, w, m }
-	{ emulators, firefox, firecamp, ebook-viewer --continue, blender, code, bluetooth_switch, mpv_last }
+super + o ; {e, f, shift + f, z, b, c, w, m, k, shift + k }
+	{ emulators, firefox, firecamp, ebook-viewer --continue, blender, code, bluetooth_switch, mpv_last, screenkey, screenkey --show-settings }
 super + { bracketleft, bracketright, backslash }
 	playerctl { previous, next, play-pause }
 super + a ; { a, s, d }
