@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/bin/sh
+# create an access point
 I=$1
 AP=$2
 PW=$3
-[ ! -z "$I" ] || I='wlan0'
-[ ! -z "$AP" ] || AP='cko'
-[ ! -z "$PW" ] || PW='@@123456'
+[ -n "$I" ] || I='wlan0'
+[ -n "$AP" ] || AP='cko'
+[ -n "$PW" ] || PW='@@123456'
 
 sudo create_ap "$I" "$I" "$AP" "$PW"
