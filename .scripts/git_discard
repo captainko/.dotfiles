@@ -1,11 +1,21 @@
 #!/bin/sh
 
-if [ -z "$REPO_ROOT_DIR" ]; then
-	REPO_ROOT_DIR="$(git rev-parse --show-toplevel)"
-fi
+# if [ -z "$REPO_ROOT_DIR" ]; then
+# 	REPO_ROOT_DIR="$(git rev-parse --show-toplevel)"
+# fi
 # echo $(git diff --cached --diff-filter=ACMR)
 result=$(
-	git grep --line-number --column --cached "DISCARD:" $(git diff --cached --name-only)
+	{
+		# TODO: faster way for this
+		# only use git grep on modified files
+		git diff --cached --name-only --diff-filter=CMR |
+			xargs --no-run-if-empty -I {} git grep --line-number --column --cached "\sDISCARD:" {}
+
+		# use grep for new added file
+		git diff --cached --name-only --diff-filter=A |
+			xargs -r -I {} grep --with-filename --line-number -e "\sDISCARD:" {}
+
+	}
 )
 
 if [ -n "$result" ]; then
