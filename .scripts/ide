@@ -1,6 +1,10 @@
 #!/bin/sh
+# (open) and split tmux into 4 panes
+v_size=25
+h_size=66
 if [ -z "$TMUX" ]; then
-	tmux new-session \; split-window -v -p 30 \; split-window -h -p 68 \; split-window -h -p 50\; select-pane -t 1
+	# tmux inline speed things up
+	tmux new-session \; split-window -v -p $v_size \; split-window -h -p $h_size \; split-window -h -p 50\; select-pane -t 1
 else
-	tmux split-window -v -p 30 \; split-window -h -p 68 \; split-window -h -p 50\; select-pane -t 1
+	tmux split-window -v -p $v_size \; split-window -h -p $h_size \; split-window -h -p 50\; select-pane -t 1
 fi
