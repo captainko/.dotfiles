@@ -12,8 +12,10 @@ s_list=(
 	"at:$HOME/code/node_projects/angular-test"
 	"go:$HOME/code/go_projects/"
 	"pg:$HOME/code/psg_project/learning"
-	"no:$HOME/code/node_projects/notion-ts"
+	"no:$HOME/code/node_projects/"
 	"w:$HOME/code/Projects/Horizon/src/web/WebHorizon"
+	"plb:$HOME/code/Projects/ltv/pmc-hrm/packages/backend"
+	"plf:$HOME/code/Projects/ltv/pmc-hrm/packages/frontend"
 
 	# ==============================================================================
 	# Sources
