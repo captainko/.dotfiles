@@ -1,8 +1,5 @@
 live_config_reload: true
 
-env:
-  TERM: xterm-256color
-
 cursor:
   style:
     blinking: Off
@@ -11,7 +8,7 @@ window:
   padding:
     x: 0
     y: 0
-  opacity: 0.90
+  opacity: 0.95
 
 scrolling:
   # Maximum number of lines in the scrollBack buffer.
@@ -23,7 +20,7 @@ scrolling:
   multiplier: 10
 
 font:
-  size: 10
+  size: 9.7
   use_thin_stroke: false
   glyph_offset:
     x: 0
@@ -155,7 +152,7 @@ colors: *gruvbox_dark
 #    15    | Meta + Ctrl + Alt
 #    16    | Meta + Ctrl + Alt + Shift
 # ---------+---------------------------
-# sources https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#:~:text=as%20a%20parameter.-,Code,-Modifiers
+# @see https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#:~:text=as%20a%20parameter.-,Code,-Modifiers
 
 key_bindings:
   - { key: Grave, mods: Control, chars: "\x1b[96;5u" } # <C-`>
