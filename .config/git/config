@@ -29,3 +29,6 @@
 [interactive]
 	diffFilter = delta --color-only
 # vim:set noet sts=2 sw=8 ts=8:
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
