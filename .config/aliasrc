@@ -3,12 +3,12 @@
 . "$HOME/.scripts/_z"
 
 # ls="ls --color=yes -lah --group-directories-first" \
+# gh='history|grep' \
 alias aptu="sudo apt update" \
 	aptug="sudo apt upgrade" \
 	less="less -XR" \
 	cl="clear" \
 	pd="cd ~-" \
-	gh='history|grep' \
 	lst="!:0" \
 	ls="exa -lah" --group-directories-first \
 	ll="ls --color=always -lah | less -R" \
@@ -26,6 +26,7 @@ alias aptu="sudo apt update" \
 	d='docker' \
 	psdocker="sudo systemctl stop docker.service" \
 	stdocker="sudo systemctl start docker.service" \
+	y="yarn" \
 	k='kubectl' \
 	c='code' \
 	lg="lazygit" \
@@ -96,7 +97,8 @@ alias aptu="sudo apt update" \
 	papgsql='systop postgresql.service; systus postgresql.service --no-pager' \
 	show_services='service --status-all' \
 	vim='nvim' \
-	ovim='\vim'
+	ovim='\vim' \
+	file_here='nautilus . &'
 
 # alias dot='dotnet'
 # alias dotbl='dotnet build -c Release --runtime linux-x64'
