@@ -24,6 +24,7 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 GOPATH="$XDG_DATA_HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOPATH=$GOPATH:"$HOME"/Documents/go_projects
+export GO111MODULE=on
 PATH=$PATH:/usr/local/go/bin:$GOBIN
 # deno
 export DENO_INSTALL="$XDG_DATA_HOME/deno"
