@@ -1,5 +1,5 @@
 #!/bin/sh
-# quickly navigate to projects
+# quickly navigate to any defined projects
 . "$HOME/.scripts/_z"
 
 # ls="ls --color=yes -lah --group-directories-first" \
