@@ -59,7 +59,7 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(..) ]] && reply=(..)
 
 zmodload zsh/complist
 # compinit
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)	# Include hidden files.
 
 
 # ==============================================================================
@@ -97,20 +97,20 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 # Change cursor shape for different vi modes.
 
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
+	if [[ ${KEYMAP} == vicmd ]] ||
+		[[ $1 = 'block' ]]; then
+	echo -ne '\e[1 q'
+	elif [[ ${KEYMAP} == main ]] ||
+		[[ ${KEYMAP} == viins ]] ||
+		[[ ${KEYMAP} = '' ]] ||
+		[[ $1 = 'beam' ]]; then
+		echo -ne '\e[5 q'
+	fi
 }
 
 function zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+	zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+	echo -ne "\e[5 q"
 }
 
 zle -N zle-keymap-select
@@ -129,35 +129,35 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
+	tmp="$(mktemp)"
+	lf -last-dir-path="$tmp" "$@"
+	if [ -f "$tmp" ]; then
+		dir="$(cat "$tmp")"
+		rm -f "$tmp"
+		[ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+	fi
 }
 
 bindkey -s '^o' 'lfcd\n'
 bindkey -s '^g' 'lazygit\n'
 
 up () {
-  local d=""
-  local limit="$1"
+	local d=""
+	local limit="$1"
 
   # Default to limit of 1
-  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-    limit=1
-  fi
+	if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+		limit=1
+	fi
 
-  for ((i=1;i<=limit;i++)); do
-    d="../$d"
-  done
+	for ((i=1;i<=limit;i++)); do
+		d="../$d"
+	done
 
-  # perform cd. Show error if cd fails
-  if ! cd "$d"; then
-    echo "Couldn't go up $limit dirs.";
-  fi
+      # perform cd. Show error if cd fails
+	if ! cd "$d"; then
+		echo "Couldn't go up $limit dirs.";
+	fi
 }
 
 # Edit line in vim with ctrl-e:
@@ -171,13 +171,13 @@ bindkey '^e' edit-command-line
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/cko/.local/src/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+	eval "$__conda_setup"
 else
-   if [ -f "/home/cko/.local/src/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/cko/.local/src/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/cko/.local/src/anaconda3/bin:$PATH"
-    fi
+	if [ -f "/home/cko/.local/src/anaconda3/etc/profile.d/conda.sh" ]; then
+		. "/home/cko/.local/src/anaconda3/etc/profile.d/conda.sh"
+	else
+		export PATH="/home/cko/.local/src/anaconda3/bin:$PATH"
+	fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
@@ -213,15 +213,15 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
 PROMPT="$DEFAULT_PROMPT"
 RPROMPT='$(gitprompt)'
 if [ ! -f /tmp/sources ]; then
-  { \
-  cat ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ; \
-  minikube completion zsh; \
-  kubectl completion zsh; \
-  node --completion-bash; \
-  npm completion; \
-  deno completions bash;} | tee /tmp/sources | source /dev/stdin
+	{ \
+		cat ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ; \
+		minikube completion zsh; \
+		kubectl completion zsh; \
+		node --completion-bash; \
+		npm completion; \
+		deno completions bash;} | tee /tmp/sources | source /dev/stdin
 else
-  source /tmp/sources
+	source /tmp/sources
 fi
 
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
@@ -235,3 +235,5 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/nul
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# vim:	noexpandtab shiftwidth=4 tabstop=4 :
