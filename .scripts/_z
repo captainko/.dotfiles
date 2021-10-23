@@ -6,41 +6,41 @@ s_list=(
 	# Code
 	# ==============================================================================
 
-	"7:$HOME/code/Projects/quany7a/"
-	"7a:$HOME/code/Projects/quany7a/api/"
-	"a:$HOME/code/Projects/clubv/Server/api/"
-	"at:$HOME/code/node_projects/angular-test"
-	"go:$HOME/code/go_projects/"
-	"pg:$HOME/code/psg_project/learning"
-	"no:$HOME/code/node_projects/"
-	"w:$HOME/code/Projects/Horizon/src/web/WebHorizon"
-	"plb:$HOME/code/Projects/ltv/pmc-hrm/packages/backend"
-	"plf:$HOME/code/Projects/ltv/pmc-hrm/packages/frontend"
+	'7:~/code/Projects/quany7a/'
+	'7a:~/code/Projects/quany7a/api/'
+	'a:~/code/Projects/clubv/Server/api/'
+	'at:~/code/node_projects/angular-test'
+	'go:~/code/go_projects/'
+	'pg:~/code/psg_project/learning'
+	'no:~/code/node_projects/'
+	'w:~/code/Projects/Horizon/src/web/WebHorizon'
+	'plb:~/code/Projects/ltv/pmc-hrm/packages/backend'
+	'plf:~/code/Projects/ltv/pmc-hrm/packages/frontend'
 
 	# ==============================================================================
 	# Sources
 	# ==============================================================================
 
-	"sr:$HOME/.local/src"
+	'sr:~/.local/src'
 
 	# ==============================================================================
 	# Documents
 	# ==============================================================================
 
-	"doc:$HOME/Documents"
-	"eb:$HOME/Documents/ebooks/"
-	"l:$HOME/Documents/Latex"
-	"or:$HOME/Documents/org"
-	"q:$HOME/Documents/queries"
+	'doc~/Documents'
+	'eb:~/Documents/ebooks/'
+	'l:~/Documents/Latex'
+	'or:~/Documents/org'
+	'q:$~/Documents/queries'
 
 	# ==============================================================================
 	# Dotfiles
 	# ==============================================================================
 
-	"d:$HOME/.dotfiles"
-	"n:$HOME/.local/src/neovim"
-	"s:$HOME/.scripts/"
-	"v:$HOME/.config/nvim"
+	'd:~/.dotfiles'
+	'n:~/.local/src/neovim'
+	's:~/.scripts/'
+	'v:~/.config/nvim'
 )
 
 # Loop over shortcuts
