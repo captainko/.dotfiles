@@ -131,7 +131,7 @@ schemes:
 
 colors: *gruvbox_dark
 
-# use cmd: show-key --ascii to get the keycode
+# use cmd: showkey --ascii to get the keycode
 # and following this instruction @see https://stackoverflow.com/questions/19062315/how-do-i-find-out-what-escape-sequence-my-terminal-needs-to-send
 
 #   Code     Modifiers
