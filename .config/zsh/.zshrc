@@ -1,5 +1,5 @@
 xset r rate 200 80
-[[ ! $- == *i* ]] && return;
+[[ ! $- == *i* ]] && return
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -59,16 +59,15 @@ zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(..) ]] && reply=(..)
 
 zmodload zsh/complist
 # compinit
-_comp_options+=(globdots)	# Include hidden files.
-
+_comp_options+=(globdots) # Include hidden files.
 
 # ==============================================================================
 # Options
 # ==============================================================================
 
-setopt CORRECT # command auto-correction
+setopt CORRECT        # command auto-correction
 setopt AUTOPARAMSLASH # tab completing directory appends a slash
-setopt SHARE_HISTORY # Share your history across all your terminal windows
+setopt SHARE_HISTORY  # Share your history across all your terminal windows
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_DUPS
@@ -99,7 +98,7 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 function zle-keymap-select {
 	if [[ ${KEYMAP} == vicmd ]] ||
 		[[ $1 = 'block' ]]; then
-	echo -ne '\e[1 q'
+		echo -ne '\e[1 q'
 	elif [[ ${KEYMAP} == main ]] ||
 		[[ ${KEYMAP} == viins ]] ||
 		[[ ${KEYMAP} = '' ]] ||
@@ -124,11 +123,11 @@ zle -N zle-line-init
 #   bindkey -rpM vicmd '^['
 # fi
 
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+echo -ne '\e[5 q'                # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q'; } # Use beam shape cursor for each new prompt.
 
 # Use lf to switch directories and bind it to ctrl-o
-lfcd () {
+lfcd() {
 	tmp="$(mktemp)"
 	lf -last-dir-path="$tmp" "$@"
 	if [ -f "$tmp" ]; then
@@ -141,35 +140,35 @@ lfcd () {
 bindkey -s '^o' 'lfcd\n'
 bindkey -s '^g' 'lazygit\n'
 
-up () {
+up() {
 	local d=""
 	local limit="$1"
 
-  # Default to limit of 1
+	# Default to limit of 1
 	if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
 		limit=1
 	fi
 
-	for ((i=1;i<=limit;i++)); do
+	for ((i = 1; i <= limit; i++)); do
 		d="../$d"
 	done
 
-      # perform cd. Show error if cd fails
+	# perform cd. Show error if cd fails
 	if ! cd "$d"; then
-		echo "Couldn't go up $limit dirs.";
+		echo "Couldn't go up $limit dirs."
 	fi
 }
 
 # Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
+autoload edit-command-line
+zle -N edit-command-line
 bindkey '^e' edit-command-line
-
 
 # Load auto suggestions
 #
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/cko/.local/src/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/cko/.local/src/anaconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
 	eval "$__conda_setup"
 else
@@ -181,7 +180,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
@@ -213,13 +211,14 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
 PROMPT="$DEFAULT_PROMPT"
 RPROMPT='$(gitprompt)'
 if [ ! -f /tmp/sources ]; then
-	{ \
-		cat ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ; \
-		minikube completion zsh; \
-		kubectl completion zsh; \
-		node --completion-bash; \
-		npm completion; \
-		deno completions bash;} | tee /tmp/sources | source /dev/stdin
+	{
+		cat ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+		minikube completion zsh
+		kubectl completion zsh
+		node --completion-bash
+		npm completion
+		deno completions bash
+	} | tee /tmp/sources | source /dev/stdin
 else
 	source /tmp/sources
 fi
