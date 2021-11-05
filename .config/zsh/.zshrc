@@ -20,6 +20,7 @@ __DOTS[ITALIC_OFF]=$'\e[23m'
 PLUGIN_DIR=~/.config/zsh/plugins
 source $PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $PLUGIN_DIR/zsh-yarn-autocompletions/yarn-autocompletions.plugin.zsh
 # Customize by CKO
 unsetopt nomatch
 # History in cache directory:
