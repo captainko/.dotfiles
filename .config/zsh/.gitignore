@@ -1,2 +1,2 @@
-lib/**/*
+plugins/
 .zcompdump
