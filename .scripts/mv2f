@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+
+for file_path in ~/Downloads/*.*; do
+	filename="${file_path##*/}"
+	case "$file_path" in
+	*"-"*)
+		prefix="${filename%-*}"
+		folder="$HOME/Downloads/$prefix"
+		[ ! -d "$folder" ] && mkdir "$folder"
+		mv "$file_path" "$folder"
+		;;
+	esac
+
+done
