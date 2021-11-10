@@ -163,4 +163,4 @@ key_bindings:
   - { key: N, mods: Control|Shift, action: SpawnNewInstance }
   - { key: Minus, mods: Control|Alt, chars: "\x1b[2d;7u" }
   - { key: Equals, mods: Control|Alt, chars: "\x1b[2d;7u" }
-  - { key: Back, mods: Control, chars: "\x1b[127;5u" }
+  - { key: Back, mods: Control, chars: "\x17" }
