@@ -22,6 +22,7 @@
 	which	= "!git branch -a | grep -i"
 	lucky	= "!sh -c `git checkout $(git which $1 -m1)` -"
 	standup	= "!git log --all --since=yesterday.9:00am --format=%s"
+	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 [delta]
 	line-numbers	    = true
 	syntax-theme	    = gruvbox-dark
