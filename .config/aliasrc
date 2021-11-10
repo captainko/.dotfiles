@@ -98,7 +98,8 @@ alias aptu="sudo apt update" \
 	show_services='service --status-all' \
 	vim='nvim' \
 	ovim='\vim' \
-	file_here='nautilus . &'
+	file_here='nautilus . &' \
+	ip_public='curl https://api.ipify.org'
 
 # alias dot='dotnet'
 # alias dotbl='dotnet build -c Release --runtime linux-x64'
