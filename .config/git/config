@@ -1,32 +1,113 @@
 [user]
-	email		= thongnguyen.uit@gmail.com
-	name		= captainko
+	email      = thongnguyen.uit@gmail.com
+	name       = captainko
 [core]
-	editor		= nvim
-	pager		= delta
+	editor     = nvim
+	pager      = delta
 [rebase]
-	autosquash	=true
+	autosquash = true
 [alias]
-	hash	= "!git --no-pager log --pretty=format:\"%h\""
-	caa	= "commit -a --amend -C HEAD"
-	cf	= "config --local -e"
-	cfg	= "config --global -e"
-	cl 	= "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
-	clnm 	= "cl --no-merged"
-	st 	= "status -sb"
-	pop 	= "stash pop"
-	sp 	= "stash pop"
-	ll 	= "log --oneline --no-merges"
-	pf	= "push --force"
-	upushed	= "log --branches --not --remotes --no-walk --decorate --oneline"
-	which	= "!git branch -a | grep -i"
-	lucky	= "!sh -c `git checkout $(git which $1 -m1)` -"
-	standup	= "!git log --all --since=yesterday.9:00am --format=%s"
-	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+	; @reference https://github.com/GitAlias/gitalias
+	; ==============================================================================
+	; Add
+	; ==============================================================================
+
+	a = "add"
+
+	; ==============================================================================
+	; Branch
+	; ==============================================================================
+
+	b     = "branch"
+	; bl    = "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
+	blnm  = "bl --no-merged"
+	which = "!git branch -a | grep -i"
+
+	; ==============================================================================
+	; Commit
+	; ==============================================================================
+
+	c   = "commit"
+	caa = "commit --amend -C HEAD"
+
+	; ==============================================================================
+	; Config
+	; ==============================================================================
+
+	Cl  = "config -l"
+	Clg = "config -l --global"
+	Ce  = "config -e --local"
+	Ceg = "config -e --global"
+
+	; ==============================================================================
+	; Diff
+	; ==============================================================================
+
+	d = "diff"
+
+	; ==============================================================================
+	; Fetch
+	; ==============================================================================
+
+	f = "fetch"
+
+	; ==============================================================================
+	; Status
+	; ==============================================================================
+
+	st = "status -sb"
+
+	; ==============================================================================
+	; Stash
+	; ==============================================================================
+
+	S = "stash"
+	Sp = "stash pop"
+
+	; ==============================================================================
+	; Pull
+	; ==============================================================================
+
+	p = "pull"
+	; ==============================================================================
+	; Push
+	; ==============================================================================
+	P       = "push"
+	Pf      = "push --force"
+	lucky   = "!sh -c `git checkout $(git which $1 -m1)` -"
+	standup = "!git log --all --since=yesterday.9:00am --format=%s"
+	latest  = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+
+	; ==============================================================================
+	; log
+	; ==============================================================================
+
+	l    = "log"
+	ll   = "log --oneline --no-merges"
+	last = "log -1 HEAD --stat"
+	; unpushed
+	lup  = "log --branches --not --remotes --no-walk --decorate --oneline"
+	hash = "!git --no-pager log --pretty=format:\"%h\""
+
+
+	; ==============================================================================
+	; Recovery
+	; ==============================================================================
+
+	uncommit = reset --soft HEAD~1
+	cleanout = !git clean -df && git checkout -- .
+
+	; ==============================================================================
+	; Un/Publish
+	; ==============================================================================
+
+	publish   = "!git push -u origin $(git current-branch)"
+	unpublish = "!git push origin :$(git current-branch)"
+
 [delta]
-	line-numbers	    = true
-	syntax-theme	    = gruvbox-dark
-	side-by-side	    = false
+	line-numbers        = true
+	syntax-theme        = gruvbox-dark
+	side-by-side        = false
 	file-modified-label = modified:
 [interactive]
 	diffFilter = delta --color-only
