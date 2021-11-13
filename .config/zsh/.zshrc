@@ -86,6 +86,8 @@ export KEYTIMEOUT=1
 bindkey -v
 # Use vim keys in tab complete menu:
 bindkey '^[[Z' reverse-menu-complete # s-tab
+bindkey -s '^[[13;5u' 'ide\n'
+bindkey -s '^[[13;6u' 'ide2\n'
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
@@ -138,9 +140,6 @@ lfcd() {
 	fi
 }
 
-bindkey -s '^o' 'lfcd\n'
-bindkey -s '^g' 'lazygit\n'
-
 up() {
 	local d=""
 	local limit="$1"
@@ -164,6 +163,9 @@ up() {
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^e' edit-command-line
+bindkey -s '^[o' 'lfcd\n'
+bindkey -s '^[g' 'lazygit\n'
+bindkey -s '^[u' 'up\n'
 
 # Load auto suggestions
 #
@@ -228,9 +230,6 @@ fi
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-# case $- in *i*)
-#     [ -z "$TMUX" ] && exec tmux
-# esac
 # fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
