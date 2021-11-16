@@ -6,6 +6,7 @@ s_list=(
 	# Code
 	# ==============================================================================
 
+	'P:~/code/Projects/'
 	'7:~/code/Projects/quany7a/'
 	'7a:~/code/Projects/quany7a/api/'
 	'a:~/code/Projects/clubv/Server/api/'
@@ -16,7 +17,7 @@ s_list=(
 	'w:~/code/Projects/Horizon/src/web/WebHorizon'
 	'plb:~/code/Projects/ltv/pmc-hrm/packages/backend'
 	'plf:~/code/Projects/ltv/pmc-hrm/packages/frontend'
-
+	'tfb-:~/code/Projects/PhuQuy/test-for-bid'
 	# ==============================================================================
 	# Sources
 	# ==============================================================================
