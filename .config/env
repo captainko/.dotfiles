@@ -2,6 +2,7 @@
 export DOTFILES=$HOME/.dotfiles
 export EDITOR="/usr/bin/vim"
 # highlight for less
+export LESS='-R'
 export LESS_TERMCAP_mb=$'\e[1;31m'   # begin bold
 export LESS_TERMCAP_md=$'\e[1;94m'   # begin blink
 export LESS_TERMCAP_so=$'\e[01;33m'  # begin reverse video
