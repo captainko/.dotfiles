@@ -213,7 +213,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
 
 PROMPT="$DEFAULT_PROMPT"
 RPROMPT='$(gitprompt)'
-if [ ! -f /tmp/sources ]; then
+if [ -f /tmp/srcs ]; then
+	source /tmp/srcs
+else
 	{
 		cat ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 		minikube completion zsh
@@ -221,9 +223,8 @@ if [ ! -f /tmp/sources ]; then
 		node --completion-bash
 		npm completion
 		deno completions bash
-	} | tee /tmp/sources | source /dev/stdin
-else
-	source /tmp/sources
+		rustup completions bash
+	} | tee /tmp/srcs | source /dev/stdin
 fi
 
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
