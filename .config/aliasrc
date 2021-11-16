@@ -29,6 +29,7 @@ alias aptu="sudo apt update" \
 	y="yarn" \
 	k='kubectl' \
 	c='code' \
+	cg='cargo' \
 	lg="lazygit" \
 	cdv='cd $DOTFILES/.config/nvim/' \
 	cfa='vim $DOTFILES/.config/aliasrc' \
