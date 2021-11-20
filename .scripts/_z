@@ -17,7 +17,13 @@ s_list=(
 	'w:~/code/Projects/Horizon/src/web/WebHorizon'
 	'plb:~/code/Projects/ltv/pmc-hrm/packages/backend'
 	'plf:~/code/Projects/ltv/pmc-hrm/packages/frontend'
-	'tfb-:~/code/Projects/PhuQuy/test-for-bid'
+	'Pqt-:~/code/Projects/PhuQuy/test-for-bid'
+	'Pmb-:~/code/node_projects/micro-services/blog'
+
+	# ==============================================================================
+	# Courses
+	# ==============================================================================
+
 	# ==============================================================================
 	# Sources
 	# ==============================================================================
