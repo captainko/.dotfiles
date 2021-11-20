@@ -18,11 +18,11 @@
 	; Branch
 	; ==============================================================================
 
-	b     = "branch"
-	; bl    = "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
-	blnm  = "bl --no-merged"
-	which = "!git branch -a | grep -i"
-
+	b              = "branch"
+	; bl		= "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
+	blnm           = "bl --no-merged"
+	which          = "!git branch -a | grep -i"
+	current-branch = rev-parse --abbrev-ref HEAD
 	; ==============================================================================
 	; Checkout
 	; ==============================================================================
