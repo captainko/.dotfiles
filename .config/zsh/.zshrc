@@ -117,14 +117,6 @@ function zle-line-init() {
 
 zle -N zle-keymap-select
 zle -N zle-line-init
-# fi
-
-# if [[ ! -z $VIM ]]; then
-#   echo "test"
-#   bindkey -r '^[/'
-#   bindkey -rpM viins '^['
-#   bindkey -rpM vicmd '^['
-# fi
 
 echo -ne '\e[5 q'                # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q'; } # Use beam shape cursor for each new prompt.
