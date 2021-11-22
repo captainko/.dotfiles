@@ -1,5 +1,5 @@
 #!/bin/sh
-downloads=/home/cko/Downloads
+downloads=~/Downloads
 ebooks=~/Documents/ebooks/
 epubs="$ebooks"/epub
 pdfs="$ebooks"/pdf
