@@ -1,4 +1,7 @@
 . "$XDG_CONFIG_HOME/env"
+if [[ -f "$XDG_CONFIG_HOME/pr-env" ]]; then
+	. "$XDG_CONFIG_HOME/pr-env"
+fi
 
 . "$XDG_DATA_HOME/cargo/env"
 
