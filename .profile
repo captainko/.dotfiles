@@ -53,4 +53,4 @@ fi
 setxkbmap -option caps:escape
 xset r rate 200 80
 . "$XDG_DATA_HOME/cargo/env"
-#. "$XDG_CONFIG_HOME/env"
+# . "$XDG_CONFIG_HOME/env"
