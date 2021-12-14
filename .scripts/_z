@@ -14,7 +14,7 @@ s_list=(
 	'go:~/code/go_projects/'
 	'pg:~/code/psg_project/learning'
 	'no:~/code/node_projects/'
-	'w:~/code/Projects/Horizon/src/web/WebHorizon'
+	'w:~/code/Projects/PhuQuy/Horizon/src/web/WebHorizon'
 	'plb:~/code/Projects/ltv/pmc-hrm/packages/backend'
 	'plf:~/code/Projects/ltv/pmc-hrm/packages/frontend'
 	'Pqt-:~/code/Projects/PhuQuy/test-for-bid'
