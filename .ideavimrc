@@ -1,0 +1,73 @@
+""" Map leader to space ---------------------
+let mapleader=","
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+" set easymotion
+set textobj-entire
+set match.it
+set ReplaceWithRegister
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+" map <leader>f <Plug>(easymotion-s)
+" map <leader>e <Plug>(easymotion-f)
+
+
+" ==============================================================================
+" Debug
+" ==============================================================================
+map <leader>dd <Action>(Debug)
+map <leader>dc <Action>(Stop)
+
+map gr <Action>(FindUsages)
+map <leader>ca <Action>(ShowIntentionActions)
+map go <Action>(FileStructurePopup)
+map <C-`> <Action>(ActivateTerminalToolWindow)
+
+map <leader>rr <Action>(RenameElement)
+map <space>ff <Action>(GotoFile)
+map <leader><leader>f <Action>(ReformatCode)
+map <leader><leader>z <Action>(ToggleDistractionFreeMode)
+map <leader><leader>m <Action>(RunToolbarMainSlotActive)
+
+
+map <C-`> <Action>(ActivateTerminalToolWindow)
+
+map <leader>fw <Action>(FindInPath)
+map <leader>s <Action>(SelectInProjectView)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map ]e <Action>(GotoNextError)
+map [e <Action>(GotoPreviousError)
+map ]c <Action>(Diff.NextChange)
+map [c <Action>(Diff.PreviousChange)
+
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)
+
+
+" ==============================================================================
+" Resize
+" ==============================================================================
+map <C-A-S-H> <Action>(ResizeToolWindowLeft)
+map <C-A-S-L> <Action>(ResizeToolWindowRight)
+map <C-A-S-K> <Action>(ResizeToolWindowUp)
+map <C-A-S-J> <Action>(ResizeToolWindowBottom)
