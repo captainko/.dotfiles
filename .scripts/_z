@@ -6,10 +6,15 @@ s_list=(
 	# Code
 	# ==============================================================================
 
+	'c:~/code/'
 	'P:~/code/Projects/'
 	'7:~/code/Projects/quany7a/'
 	'7a:~/code/Projects/quany7a/api/'
 	'a:~/code/Projects/clubv/Server/api/'
+	'f:~/code/Projects/ttek/bd-vision-fe/'
+	'j:~/code/java_projects/'
+	'jt:~/code/java_projects/tutorials'
+	'js:~/code/java_projects/spring_tutor'
 	'at:~/code/node_projects/angular-test'
 	'go:~/code/go_projects/'
 	'pg:~/code/psg_project/learning'
