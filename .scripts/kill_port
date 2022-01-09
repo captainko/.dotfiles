@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#loop through additional arguments as ports
+
+while [ $# -gt 0 ]
+do
+  fuser -k $1/tcp $1/udp
+  shift
+done
+
