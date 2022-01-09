@@ -205,6 +205,13 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
 
 PROMPT="$DEFAULT_PROMPT"
 RPROMPT='$(gitprompt)'
+
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
+# Load zsh-syntax-highlighting; should be last.
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+# fpath+=${ZDOTDIR:-~}/.zsh_functions
+
 if [ -f /tmp/srcs ]; then
 	source /tmp/srcs
 else
@@ -216,16 +223,7 @@ else
 		npm completion
 		deno completions bash
 		rustup completions bash
-	} | tee /tmp/srcs | source /dev/stdin
+	} | sed 's/^ \+ /\t/g' | tee /tmp/srcs | source /dev/stdin
 fi
-
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
-# Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
-# fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # vim:	noexpandtab shiftwidth=4 tabstop=4 :
