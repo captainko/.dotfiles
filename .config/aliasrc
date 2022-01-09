@@ -76,7 +76,6 @@ alias aptu="sudo apt update" \
 	gw='git worktree' \
 	gsp='git stash pop' \
 	gst='git status' \
-	ns='npm start' \
 	nsd='npm run start:dev' \
 	ndd='npm run start:debug' \
 	ngs='ng serve' \
