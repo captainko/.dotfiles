@@ -7,6 +7,8 @@ s_list=(
 	# ==============================================================================
 
 	'c:~/code/'
+	'cc:~/code/contributes'
+	'ccc:~/code/contributes/captainko'
 	'P:~/code/Projects/'
 	'7:~/code/Projects/quany7a/'
 	'7a:~/code/Projects/quany7a/api/'
