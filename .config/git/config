@@ -6,6 +6,12 @@
 	pager      = delta
 [rebase]
 	autosquash = true
+[commit]
+	gpgsign = false
+[pull]
+	rebase = true
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
 [alias]
 	; @reference https://github.com/GitAlias/gitalias
 	; ==============================================================================
@@ -19,6 +25,7 @@
 	; ==============================================================================
 
 	b              = "branch"
+	bm             = "branch --move"
 	; bl		= "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
 	blnm           = "bl --no-merged"
 	which          = "!git branch -a | grep -i"
@@ -76,8 +83,8 @@
 	; Stash
 	; ==============================================================================
 
-	S = "stash"
-	Sp = "stash pop"
+	S   = "stash"
+	Sp  = "stash pop"
 	pop = "stash pop"
 
 	; ==============================================================================
@@ -113,6 +120,7 @@
 	; ==============================================================================
 
 	uncommit = reset --soft HEAD~1
+	unstage  = reset --
 	cleanout = !git clean -df && git checkout -- .
 
 	; ==============================================================================
@@ -129,8 +137,5 @@
 	file-modified-label = modified:
 [interactive]
 	diffFilter = delta --color-only
-# vim:set noet sts=2 sw=8 ts=8:
-[credential "https://github.com"]
-	helper = !/usr/bin/gh auth git-credential
-[commit]
-	gpgsign = false
+[diff]
+	colorMoved = zebra
