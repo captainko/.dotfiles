@@ -143,7 +143,7 @@ export UNCRUSTIFY_CONFIG="$XDG_CONFIG_HOME/uncrustify/.cfg"
 # prisma
 export CHECKPOINT_DISABLE=1 # opt-out of data collection
 
-[[ -n "$(command -v fnm)" ]] && fnm env | source /dev/stdin
+[[ -n "$(command -v fnm)" ]] && fnm env --use-on-cd | source /dev/stdin
 
 # sdk
 export SDKMAN_DIR="$HOME/.sdkman"
