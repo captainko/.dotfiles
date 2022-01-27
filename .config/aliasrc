@@ -10,7 +10,7 @@ alias aptu="sudo apt update" \
 	cl="clear" \
 	pd="cd ~-" \
 	lst="!:0" \
-	ls="exa -lah" --group-directories-first \
+	ls="exa -lah --group-directories-first --color=always" \
 	ll="ls --color=always -lah | less -R" \
 	lsa="ls -la" \
 	df="df -h" \
