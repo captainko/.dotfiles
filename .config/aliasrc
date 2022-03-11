@@ -116,3 +116,4 @@ alias aptu="sudo apt update" \
 # alias nsgc='nest g co';
 # alias nsgs='nest g s';
 # alias nsgm='nest g mo';
+# vim: set nospell:
