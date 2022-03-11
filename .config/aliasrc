@@ -6,8 +6,9 @@
 # gh='history|grep' \
 alias aptu="sudo apt update" \
 	aptug="sudo apt upgrade" \
-	less="less -XR" \
+	less="less -XrR" \
 	cl="clear" \
+	fd="fd --color 'always'" \
 	pd="cd ~-" \
 	lst="!:0" \
 	ls="exa -lah --group-directories-first --color=always" \
@@ -55,6 +56,7 @@ alias aptu="sudo apt update" \
 	dmenu_run='dmenu_run -sb "#CE53C7" -fn "10x20"' \
 	cp='cp -iv' \
 	cfssh="vim ~/.ssh/config" \
+	jq="jq -C" \
 	mpv='swallow mpv' \
 	cD='cd ~/Downloads' \
 	tt='trash' \
