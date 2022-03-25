@@ -1,0 +1,26 @@
+#!/bin/bash
+
+email="$ATLASSIAN_EMAIL"
+token="$ATLASSIAN_TOKEN"
+
+get_summary() {
+	code=$1
+	summary=$(curl --silent "https://ttekvn.atlassian.net/rest/api/latest/issue/$code" --user "$email:$token" | jq -r '.fields.summary')
+	echo "$summary"
+}
+
+pids=()
+IFS='
+'
+for lines in $(git bv-last-month); do
+
+	issue_codes=$(echo "$lines" | grep -oP "BV2-\d+")
+
+	for code in $issue_codes; do
+		get_summary "$code" &
+		pids+=($!)
+	done
+
+done
+
+wait "${pids[@]}"
