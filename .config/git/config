@@ -149,6 +149,7 @@
 	; Utils
 	; ==============================================================================
 	last-month = !git --no-pager log --author="`git config user.name`" --since={`date +%Y-%m`} --oneline --format="%s"
+	bv-last-month = !git last-month --grep="BV2"
 
 
 [delta]
