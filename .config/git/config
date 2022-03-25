@@ -131,11 +131,24 @@
 	publish   = "!git push -u origin $(git current-branch)"
 	unpublish = "!git push origin :$(git current-branch)"
 
+
+	; ==============================================================================
+	; WIP
+	; ==============================================================================
+
+	wip = !"git add --all; git ls-files --deleted -z | xargs -0 git rm; git commit --message=wip"
+	unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
+
 	; ==============================================================================
 	; Scripts
 	; ==============================================================================
 
 	remotes-prune = !git remote | xargs -n 1 git remote prune
+
+	; ==============================================================================
+	; Utils
+	; ==============================================================================
+	last-month = !git --no-pager log --author="`git config user.name`" --since={`date +%Y-%m`} --oneline --format="%s"
 
 
 [delta]
