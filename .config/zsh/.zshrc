@@ -81,7 +81,7 @@ SAVEHIST=100000
 # HISCONTROL=ignoreboth:erasedups
 HISTFILE=~/.cache/zsh/history
 
-export KEYTIMEOUT=1
+export KEYTIMEOUT=25
 # if [[ -z $VIM ]]; then
 bindkey -v
 # Use vim keys in tab complete menu:
@@ -159,6 +159,15 @@ bindkey -s '^[o' 'lfcd\n'
 bindkey -s '^[g' 'lazygit\n'
 bindkey -s '^[u' 'up\n'
 
+# surrounding
+autoload -Uz surround
+zle -N delete-surround surround
+zle -N add-surround surround
+zle -N change-surround surround
+bindkey -a cs change-surround
+bindkey -a ds delete-surround
+bindkey -a ys add-surround
+bindkey -M visual S add-surround
 # Load auto suggestions
 #
 # >>> conda initialize >>>
