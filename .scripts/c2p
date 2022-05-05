@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# convert curl request to httpie
+
+str=$(xclip -selection c -o)
+
+data=$(
+	curl 'https://curlipie.vercel.app/api/' \
+		--request POST \
+		-H 'content-type: application/json' \
+		--no-progress-meter \
+		--data "{\"curl\": \"${str}\"}" \
+		--compressed
+)
+
+echo "$data" |
+	jq -M --raw-output '.httpie' | # take only `httpie` value
+	xclip -sel clip                # set to clipboard
