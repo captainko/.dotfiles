@@ -2,6 +2,9 @@ os:
   editCommand: "nvim" # as an example
 gui:
   showIcons: true
+  authorColors:
+    captainko: yellow
+
 git:
   paging:
     colorArg: always
