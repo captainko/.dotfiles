@@ -101,7 +101,9 @@ alias aptu="sudo apt update" \
 	vim='nvim' \
 	ovim='\vim' \
 	file_here='nautilus . &' \
-	ip_public='curl https://api.ipify.org'
+	ip_public='curl https://api.ipify.org' \
+	http="http --pretty=all" \
+	https="https --pretty=all"
 
 # alias dot='dotnet'
 # alias dotbl='dotnet build -c Release --runtime linux-x64'
