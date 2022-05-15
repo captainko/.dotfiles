@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# a script to run beautify-html before committing
+
+if [ -z "$REPO_ROOT_DIR" ]; then
+	REPO_ROOT_DIR="$(git rev-parse --show-toplevel)"
+fi
+
+# abc=$(git diff --cached --name-only --diff-filter=ACMR -- '*.java' | sed -e 's/ /\\ /g' -e "s;.*;$REPO_ROOT_DIR/&;")
+# echo "$abc"
+git diff --cached --name-only --diff-filter=ACMR -- '*.java' '*.xml' |
+	sed -e 's/ /\\ /g' -e "s;.*;$REPO_ROOT_DIR/&;" |
+	tr "\n" ' ' |
+	xargs sh -c 'idea.sh format "$@" > /dev/null 2>&1 && git add "$@"'
+exit $?
