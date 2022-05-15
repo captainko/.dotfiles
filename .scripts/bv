@@ -1,11 +1,12 @@
 #!/bin/bash
 
-email="$ATLASSIAN_EMAIL"
-token="$ATLASSIAN_TOKEN"
-
 get_summary() {
 	code=$1
-	summary=$(curl --silent "https://ttekvn.atlassian.net/rest/api/latest/issue/$code" --user "$email:$token" | jq -r '.fields.summary')
+	summary=$(
+		curl --silent "https://ttekvn.atlassian.net/rest/api/latest/issue/$code" \
+			--user "$ATLASSIAN_EMAIL:$ATLASSIAN_TOKEN" |
+			jq -r '.fields.summary'
+	)
 	echo "$summary"
 }
 
