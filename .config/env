@@ -78,6 +78,8 @@ export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 #export ADB_VENDOR_KEY="$XDG_CONFIG_HOME"/android
 #export ADB_VENDOR_KEYS="$XDG_CONFIG_HOME"/android
 
+# Idea
+[[ -s /opt/idea/bin/ ]] && PATH="$PATH:/opt/idea/bin"
 # android-studio
 export ANDROID_HOME="$HOME/.tools/Android/sdk"
 PATH="$PATH:$ANDROID_HOME/emulator"
@@ -151,6 +153,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 PATH="$PATH:$HOME/.rvm/bin"
+
+# Hashkell
+[ -f "/home/cko/.ghcup/env" ] && . "/home/cko/.ghcup/env" # ghcup-env
 
 # finally
 export PATH="$PATH"
