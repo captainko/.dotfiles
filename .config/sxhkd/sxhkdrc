@@ -9,7 +9,7 @@ ctrl + Print
 	flameshot full -c
 
 ctrl + shift + Print
-	flameshot full -c
+	flameshot gui -c
 
 shift + Print
 	flameshot gui -p ~/Pictures
@@ -18,7 +18,7 @@ ctrl + alt + Print
 	flameshot screen -c
 
 alt + Print
-	flameshot screen -p ~/Pictures
+	flameshot screen
 
 
 # ==============================================================================
