@@ -10,6 +10,6 @@ fi
 # echo "$abc"
 git diff --cached --name-only --diff-filter=ACMR -- '*.java' '*.xml' |
 	sed -e 's/ /\\ /g' -e "s;.*;$REPO_ROOT_DIR/&;" |
-	tr "\n" ' ' |
-	xargs sh -c 'idea.sh format "$@" > /dev/null 2>&1 && git add "$@"'
-exit $?
+	tr "\n" ' ' | sed -e 's/ $/\n/g' | xargs -d '\n' -I{} sh -c 'format.sh {} && git add {}' |
+	# xargs -L sh -c 'idea.sh format "$@" > /dev/null 2>&1 && git add "$@"'
+	exit $?
