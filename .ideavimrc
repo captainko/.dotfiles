@@ -48,6 +48,13 @@ map <leader><leader>z <Action>(ToggleDistractionFreeMode)
 map <leader><leader>m <Action>(RunToolbarMainSlotActive)
 
 
+" ==============================================================================
+" Splitting
+" ==============================================================================
+"
+map <leader><C-H> <Action>(SplitHorizontally)
+map <leader><C-V> <Action>(SplitVertically)
+
 map <C-`> <Action>(ActivateTerminalToolWindow)
 
 map <leader>fw <Action>(FindInPath)
