@@ -14,6 +14,15 @@
 	autoSetupRemote = true
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
+[delta]
+	line-numbers        = true
+	syntax-theme        = gruvbox-dark
+	side-by-side        = false
+	file-modified-label = modified:
+[interactive]
+	diffFilter = delta --color-only
+[diff]
+	colorMoved = zebra
 [alias]
 	; @reference https://github.com/GitAlias/gitalias
 	; ==============================================================================
@@ -113,7 +122,7 @@
 	l    = "log"
 	ll   = "log --oneline --no-merges"
 	last = "log -1 HEAD --stat"
-	; unpushed
+	; un-push
 	lup  = "log --branches --not --remotes --no-walk --decorate --oneline"
 	hash = "!git --no-pager log --pretty=format:\"%h\""
 
@@ -138,7 +147,7 @@
 	; WIP
 	; ==============================================================================
 
-	wip = !"git add --all; git ls-files --deleted -z | xargs -0 git rm; git commit --message=wip"
+	wip   = !"git add --all; git ls-files --deleted -z | xargs -0 git rm; git commit --message=wip"
 	unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
 
 	; ==============================================================================
@@ -150,16 +159,5 @@
 	; ==============================================================================
 	; Utils
 	; ==============================================================================
-	last-month = !git --no-pager log --author="`git config user.name`" --since={`date +%Y-%m`} --oneline --format="%s"
+	last-month    = !git --no-pager log --author="`git config user.name`" --since={`date +%Y-%m`} --oneline --format="%s"
 	bv-last-month = !git last-month --grep="BV2"
-
-
-[delta]
-	line-numbers        = true
-	syntax-theme        = gruvbox-dark
-	side-by-side        = false
-	file-modified-label = modified:
-[interactive]
-	diffFilter = delta --color-only
-[diff]
-	colorMoved = zebra
