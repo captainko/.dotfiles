@@ -140,7 +140,7 @@ export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 
 # Chrome Bin
 export CHROME_BIN=/usr/bin/brave-browser-stable
-export UNCRUSTIFY_CONFIG="$XDG_CONFIG_HOME/uncrustify/.cfg"
+export UNCRUSTIFY_CONFIG="$XDG_CONFIG_HOME/uncrustify/default.cfg"
 
 # prisma
 export CHECKPOINT_DISABLE=1 # opt-out of data collection
