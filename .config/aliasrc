@@ -34,6 +34,7 @@ alias aptu="sudo apt update" \
 	lg="lazygit" \
 	cdv='cd $DOTFILES/.config/nvim/' \
 	cdn='cd ~/code/notes/' \
+	cdr='cd ~/code/Projects/rust/' \
 	cfa='vim $DOTFILES/.config/aliasrc' \
 	cfat='vim $DOTFILES/.config/alacritty/alacritty.yml' \
 	cfe='vim $DOTFILES/.config/env' \
