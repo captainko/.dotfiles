@@ -29,7 +29,10 @@ alias aptu="sudo apt update" \
 	stdocker="sudo systemctl start docker.service" \
 	y="yarn" \
 	k='kubectl' \
+	kns='kubectl config set-context --current --namespace ' \
+	kctx='kubectl config use-context ' \
 	c='code' \
+	z="zellij" \
 	cg='cargo' \
 	lg="lazygit" \
 	cdv='cd $DOTFILES/.config/nvim/' \
@@ -39,6 +42,7 @@ alias aptu="sudo apt update" \
 	cfat='vim $DOTFILES/.config/alacritty/alacritty.yml' \
 	cfe='vim $DOTFILES/.config/env' \
 	cfd='vim ~/.scripts/_z' \
+	cfze='vim $DOTFILES/.config/zellij/config.yaml' \
 	cfeh="sudo vim /etc/hosts" \
 	cfg='git config --global -e' \
 	cfi='vim $DOTFILES/.config/regolith/i3/config' \
@@ -107,7 +111,11 @@ alias aptu="sudo apt update" \
 	file_here='nautilus . &' \
 	ip_public='curl https://api.ipify.org' \
 	http="http --pretty=all" \
-	https="https --pretty=all"
+	https="https --pretty=all" \
+	lerna"npx lerna" \
+	ltest="lerna run test" \
+	lbuild="lerna run build" \
+	lboost="lerna bootstrap"
 
 # alias dot='dotnet'
 # alias dotbl='dotnet build -c Release --runtime linux-x64'

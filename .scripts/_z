@@ -27,6 +27,7 @@ s_list=(
 	'Pqt-:~/code/Projects/PhuQuy/test-for-bid'
 	'hb:~/code/Projects/qkit/HRM-QKIT/packages/backend'
 	'Pmb-:~/code/node_projects/micro-services/blog'
+	'Q:~/code/Projects/qkit'
 
 	# ==============================================================================
 	# Courses
@@ -42,7 +43,8 @@ s_list=(
 	# Documents
 	# ==============================================================================
 
-	'doc~/Documents'
+	'not:~/Documents/notes'
+	'doc:~/Documents'
 	'eb:~/Documents/ebooks/'
 	'l:~/Documents/Latex'
 	'or:~/Documents/org'
