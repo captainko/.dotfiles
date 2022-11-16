@@ -18,7 +18,7 @@ __DOTS[ITALIC_ON]=$'\e[3m'
 __DOTS[ITALIC_OFF]=$'\e[23m'
 
 PLUGIN_DIR=~/.config/zsh/plugins
-source $PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUGIN_DIR/zsh-yarn-autocompletions/yarn-autocompletions.plugin.zsh
 # Customize by CKO
@@ -151,6 +151,27 @@ up() {
 	fi
 }
 
+# ==============================================================================
+# DOTNET
+# ==============================================================================
+_dotnet_zsh_complete()
+{
+  local completions=("$(dotnet complete "$words")")
+
+  # If the completion list is empty, just continue with filename selection
+  if [ -z "$completions" ]
+  then
+    _arguments '*::arguments: _normal'
+    return
+  fi
+
+  # This is not a variable assigment, don't remove spaces!
+  _values = "${(ps:\n:)completions}"
+}
+
+compdef _dotnet_zsh_complete dotnet
+compdef _dotnet_zsh_complete dn
+
 # Edit line in vim with ctrl-e:
 autoload edit-command-line
 zle -N edit-command-line
@@ -225,9 +246,8 @@ if [ -f /tmp/srcs ]; then
 	source /tmp/srcs
 else
 	{
-		cat ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-		minikube completion zsh
-		kubectl completion zsh
+		# minikube completion zsh
+		# kubectl completion zsh
 		node --completion-bash
 		npm completion
 		deno completions bash
