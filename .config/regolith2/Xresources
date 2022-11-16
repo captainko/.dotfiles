@@ -1,0 +1,43 @@
+gnome.wallpaper:                                /home/cko/Pictures/Wallpapers/wallpapersden.com_daft-punk-minimal-dj-art_2048x2048.jpg
+regolith.wallpaper.file:                        /home/cko/Pictures/Wallpapers/wallpapersden.com_daft-punk-minimal-dj-art_2048x2048.jpg
+gnome.terminal.use-transparent-background:      true
+gnome.terminal.background-transparency-percent: 15
+i3-wm.bar.position:                             bottom
+i3-wm.gaps.inner.size:                          4
+i3-wm.gaps.outer.size:                          2
+
+! colors
+i3-wm.bar.background.color:                    #11112f
+i3-wm.bar.workspace.focused.border.color:      #a94290
+i3-wm.bar.workspace.focused.background.color:  #552148
+i3-wm.bar.workspace.focused.text.color:        #eed9e9
+i3-wm.client.unfocused.color.child_border:     #1d2921
+i3-wm.bar.workspace.inactive.border.color:     #582a5f
+i3-wm.bar.workspace.inactive.background.color: #cfdbef
+i3-wm.bar.workspace.inactive.text.color:       #406fc0
+i3xrocks.label.color:                          #406fc0
+i3xrocks.value.color:                          #406fc0
+i3xrocks.nominal.color:                        #406fc0
+i3-wm.client.focused.color.child_border:       #a94290
+i3-wm.client.unfocused.color.border:           #1d2921
+i3-wm.client.focused.color.indicator:          #434463
+i3-wm.program.launcher.app: rofi -show drun
+i3-wm.program.launcher.cmd: rofi -show run
+i3-wm.program.launcher.window: rofi -show window
+i3-wm.program.file_search: rofi -show find -modi find:/usr/share/rofi/modi/finder.sh
+i3-wm.program.look_selector: rofi -show look -modi look:/usr/share/rofi/modi/look-selector.sh
+
+! i3-wm.bar.background.color: #282828
+! i3-wm.bar.workspace.focused.border.color: #b16286
+! i3-wm.bar.workspace.focused.background.color:  #282828
+! i3-wm.bar.workspace.focused.text.color:  #d3869b
+! i3-wm.client.unfocused.color.child_border : #1d2921
+! i3-wm.bar.workspace.inactive.border.color:  #d3869b
+! i3-wm.bar.workspace.inactive.background.color:  #fbf1c7
+! i3-wm.bar.workspace.inactive.text.color:  #b16286
+! i3xrocks.label.color: #b16286
+! i3xrocks.value.color: #b16286
+! i3xrocks.nominal.color:	#b16286
+! i3-wm.client.focused.color.child_border: #b16286
+! i3-wm.client.unfocused.color.border: #1d2921
+! i3-wm.client.focused.color.indicator: #458588
