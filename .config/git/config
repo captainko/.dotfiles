@@ -1,9 +1,11 @@
 [user]
-	email      = thongnguyen.uit@gmail.com
-	name       = captainko
+	email         = thongnguyen.uit@gmail.com
+	name          = captainko
 [core]
-	editor     = nvim
-	pager      = delta
+	editor        = nvim
+	pager         = delta
+[init]
+	defaultBranch = main
 [rebase]
 	autosquash = true
 [commit]
@@ -12,6 +14,7 @@
 	rebase = true
 [push]
 	autoSetupRemote = true
+	default = current
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
 [delta]
