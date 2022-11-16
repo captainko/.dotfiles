@@ -10,9 +10,9 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -53,4 +53,3 @@ fi
 setxkbmap -option caps:escape
 xset r rate 200 80
 . "$XDG_DATA_HOME/cargo/env"
-# . "$XDG_CONFIG_HOME/env"
