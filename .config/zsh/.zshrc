@@ -1,5 +1,4 @@
 xset r rate 200 80
-eval "$(starship init zsh)"
 
 [[ ! $- == *i* ]] && return
 
@@ -241,13 +240,15 @@ if [ -f /tmp/srcs ]; then
 	source /tmp/srcs
 else
 	{
+		starship init zsh --print-full-init
 		# minikube completion zsh
 		kubectl completion zsh
+		k3d completion zsh
 		node --completion-bash
 		npm completion
-		deno completions bash
-		rustup completions bash
-	} | sed 's/^ \+ /\t/g' | tee /tmp/srcs | source /dev/stdin
+		# deno completions bash
+		# rustup completions bash
+	} | sed 's/^ \+ //g' | tee /tmp/srcs | source /dev/stdin
 fi
 
 # vim:	noexpandtab shiftwidth=4 tabstop=4 :
