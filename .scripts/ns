@@ -3,7 +3,9 @@
 npm run serve
 if [ ! $? -eq 0 ]; then
 	npm run start:dev
+	exit $?
 fi
 if [ ! $? -eq 0 ]; then
 	npm run start
+	exit $?
 fi

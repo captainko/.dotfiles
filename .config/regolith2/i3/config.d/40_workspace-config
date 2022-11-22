@@ -290,7 +290,7 @@ bindsym $mod+Shift+n exec dunstctl close-all
 #bindsym $mod+i bar mode toggle
 
 # Cause Settings app to float above tiled windows
-floating_maximum_size -1 x -1
+# floating_maximum_size -1 x -1
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="gnome-flashback"] focus
 for_window [class="jetbrains-studio"] floating enable

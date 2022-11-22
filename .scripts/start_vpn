@@ -1,3 +1,4 @@
 #!/bin/sh
 
-sudo openvpn /home/cko/.openvpn/vpn-168.ovpn
+# sudo openvpn /home/cko/.openvpn/vpn-168.ovpn
+sudo openvpn /home/cko/.openvpn/vpn-1942.ovpn

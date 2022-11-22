@@ -1,16 +1,12 @@
 xset r rate 200 80
+eval "$(starship init zsh)"
+
 [[ ! $- == *i* ]] && return
 
 # Enable colors and change prompt:
-autoload -U colors && colors
+# autoload -U colors && colors
 autoload -Uz compinit
 compinit
-# export GTK_IM_MODULE=ibus
-# export XMODIFIERS=@im=ibus
-# export QT_IM_MODULE=ibus
-# export XIM_PROGRAM=/usr/bin/ibus-daemon
-#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b ${vcs_info_msg_0_} >"
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M%{$reset_color%} %B%{$fg[cyan]%}%1~%{$fg[red]%}]%{$reset_color%} \$%b "
 
 typeset -A __DOTS
 
@@ -18,7 +14,6 @@ __DOTS[ITALIC_ON]=$'\e[3m'
 __DOTS[ITALIC_OFF]=$'\e[23m'
 
 PLUGIN_DIR=~/.config/zsh/plugins
-# source $PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUGIN_DIR/zsh-yarn-autocompletions/yarn-autocompletions.plugin.zsh
 # Customize by CKO
@@ -170,7 +165,7 @@ _dotnet_zsh_complete()
 }
 
 compdef _dotnet_zsh_complete dotnet
-compdef _dotnet_zsh_complete dn
+# compdef _dotnet_zsh_complete dn
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line
@@ -211,33 +206,33 @@ unset __conda_setup
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 # [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && source /home/cko/.nix-profile/etc/profile.d/nix.sh
 
-DEFAULT_PROMPT="$PROMPT"
-[ -f ~/.config/zsh/plugins/git-prompt.zsh/git-prompt.zsh ] && . ~/.config/zsh/plugins/git-prompt.zsh/git-prompt.zsh
+# DEFAULT_PROMPT="$PROMPT"
+# [ -f ~/.config/zsh/plugins/git-prompt.zsh/git-prompt.zsh ] && . ~/.config/zsh/plugins/git-prompt.zsh/git-prompt.zsh
 [ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
 
-ZSH_GIT_PROMPT_SHOW_UPSTREAM="no"
-ZSH_THEME_GIT_PROMPT_PREFIX=" "
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
-ZSH_THEME_GIT_PROMPT_DETACHED="%{$fg_bold[cyan]%}:"
-ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
-ZSH_THEME_GIT_PROMPT_UPSTREAM_SYMBOL="%{$fg_bold[yellow]%}⟳ "
-ZSH_THEME_GIT_PROMPT_UPSTREAM_PREFIX="%{$fg[red]%}(%{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_UPSTREAM_SUFFIX="%{$fg[red]%})"
-ZSH_THEME_GIT_PROMPT_BEHIND="↓"
-ZSH_THEME_GIT_PROMPT_AHEAD="↑"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}✖"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●"
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[red]%}✚"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="…"
-ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}⚑"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
+# ZSH_GIT_PROMPT_SHOW_UPSTREAM="no"
+# ZSH_THEME_GIT_PROMPT_PREFIX=" "
+# ZSH_THEME_GIT_PROMPT_SUFFIX=""
+# ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+# ZSH_THEME_GIT_PROMPT_DETACHED="%{$fg_bold[cyan]%}:"
+# ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
+# ZSH_THEME_GIT_PROMPT_UPSTREAM_SYMBOL="%{$fg_bold[yellow]%}⟳ "
+# ZSH_THEME_GIT_PROMPT_UPSTREAM_PREFIX="%{$fg[red]%}(%{$fg[yellow]%}"
+# ZSH_THEME_GIT_PROMPT_UPSTREAM_SUFFIX="%{$fg[red]%})"
+# ZSH_THEME_GIT_PROMPT_BEHIND="↓"
+# ZSH_THEME_GIT_PROMPT_AHEAD="↑"
+# ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}✖"
+# ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●"
+# ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[red]%}✚"
+# ZSH_THEME_GIT_PROMPT_UNTRACKED="…"
+# ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}⚑"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
 
-PROMPT="$DEFAULT_PROMPT"
-RPROMPT='$(gitprompt)'
+# PROMPT="$DEFAULT_PROMPT"
+# RPROMPT='$(gitprompt)'
 
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
-# Load zsh-syntax-highlighting; should be last.
+# # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
+# # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 # fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -247,7 +242,7 @@ if [ -f /tmp/srcs ]; then
 else
 	{
 		# minikube completion zsh
-		# kubectl completion zsh
+		kubectl completion zsh
 		node --completion-bash
 		npm completion
 		deno completions bash

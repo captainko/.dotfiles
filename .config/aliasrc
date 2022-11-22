@@ -40,6 +40,7 @@ alias aptu="sudo apt update" \
 	cdn='cd ~/code/notes/' \
 	cdr='cd ~/code/Projects/rust/' \
 	cfa='vim $DOTFILES/.config/aliasrc' \
+	cfs='vim $DOTFILES/.config/starship.toml' \
 	cfat='vim $DOTFILES/.config/alacritty/alacritty.yml' \
 	cfe='vim $DOTFILES/.config/env' \
 	cfd='vim ~/.scripts/_z' \
