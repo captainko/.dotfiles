@@ -1,9 +1,25 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+add_newline = false
+
 [character]
 success_symbol = "[](bold green)"
 error_symbol = "[☢](bold red)"
+vimcmd_symbol = "[](bold green)"
 
+[username]
+show_always = true
+style_user = "yellow bold"
+format = '[\[](bold red)[$user]($style)[@](bold green)'
+
+[hostname]
+disabled = false
+format = '[$ssh_symbol$hostname]($style) '
+style = "blue bold"
+ssh_only = false
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style)[\\]](bold red) "
 
 [memory_usage]
 disabled = false
@@ -17,20 +33,36 @@ staged = '[+${count}](green)'
 stashed = "[≡${count}](bright-green)"
 untracked = '[?${count}](cyan)'
 
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = "bold purple"
+
 [git_metrics]
 disabled = false
+
+[cmd_duration]
+format = '[$duration]($style) '
 
 [package]
 disabled = true
 
 [nodejs]
 disabled = false
+format = '[$symbol($version )]($style)'
+
+[dotnet]
+disabled = true
+detect_extensions = ['csproj', 'fsproj', 'xproj', 'sln']
 
 [aws]
 disabled = true
 
 [ruby]
 disabled = true
+
+[golang]
+symbol = " "
 
 [gcloud]
 disabled = true
