@@ -52,7 +52,8 @@ disabled = false
 format = '[$symbol($version )]($style)'
 
 [dotnet]
-disabled = true
+disabled = false
+format = '[$symbol($version )]($style)'
 detect_extensions = ['csproj', 'fsproj', 'xproj', 'sln']
 
 [aws]
@@ -69,3 +70,12 @@ disabled = true
 
 [openstack]
 disabled = true
+
+[rust]
+format = "[$symbol($version )]($style)"
+
+[c]
+format = "[$symbol($version )]($style)"
+
+[java]
+format = "[$symbol($version )]($style)"
