@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+find ./ -maxdepth 1 -mindepth 1 -type 'd' |
+	xargs -I "{}" -P $(nproc)8 sh -c 'git -C {} fetch && git -C {} pull'
