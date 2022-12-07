@@ -38,7 +38,7 @@ s_list=(
 	# Sources
 	# ==============================================================================
 
-	'sr:~/.local/src'
+	'cb:~/drives/dev/contributes'
 
 	# ==============================================================================
 	# Documents
@@ -46,7 +46,7 @@ s_list=(
 
 	'not:~/Documents/notes'
 	'doc:~/Documents'
-	'eb:~/Documents/ebooks/'
+	'eb:~/Documents/ebooks'
 	'l:~/Documents/Latex'
 	'or:~/Documents/org'
 	'q:$~/Documents/queries'
@@ -56,7 +56,7 @@ s_list=(
 	# ==============================================================================
 
 	'd:~/.dotfiles'
-	'n:~/.local/src/neovim'
+	'n:~/drives/dev/contributes/neovim'
 	's:~/.scripts/'
 	'v:~/.config/nvim'
 )
