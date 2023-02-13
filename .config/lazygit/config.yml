@@ -10,3 +10,6 @@ git:
     colorArg: always
     # useConfig: true
     pager: delta --dark --paging=never --syntax-theme=gruvbox-dark
+refresher:
+  refreshInterval: 10
+  fetchInterval: 45
