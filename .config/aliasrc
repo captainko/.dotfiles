@@ -4,10 +4,10 @@
 
 # ls="ls --color=yes -lah --group-directories-first" \
 # gh='history|grep' \
-alias aptu="sudo apt update" \
+alias aptu="sudo apt update && sudo apt upgrade" \
 	aptug="sudo apt upgrade" \
 	less="less -XrR" \
-	cl="clear" \
+	cl="clear -x" \
 	fd="fd --color 'always'" \
 	pd="cd ~-" \
 	lst="!:0" \
@@ -40,6 +40,7 @@ alias aptu="sudo apt update" \
 	cdn='cd ~/code/notes/' \
 	cdr='cd ~/code/Projects/rust/' \
 	cfa='vim $DOTFILES/.config/aliasrc' \
+	cfx='vim $DOTFILES/.config/xmonad/xmonad.hs' \
 	cfs='vim $DOTFILES/.config/starship.toml' \
 	cfat='vim $DOTFILES/.config/alacritty/alacritty.yml' \
 	cfe='vim $DOTFILES/.config/env' \
@@ -56,7 +57,7 @@ alias aptu="sudo apt update" \
 	cfsx='vim $DOTFILES/.config/sxhkd/sxhkdrc' \
 	cft='vim $DOTFILES/.config/tmux/tmux.conf' \
 	cfto='vim $DOTFILES/.config/terminator/config' \
-	cfv='cdv; vim init.lua; pd;' \
+	cfv='vim init.lua;' \
 	cfv='cdv; vim init.lua; pd;' \
 	cn='cdv; vim; pd;' \
 	cfvk='vim $DOTFILES/.config/nvim/keys/mapping.vim' \
