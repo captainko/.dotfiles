@@ -3,8 +3,8 @@
 add_newline = false
 
 [character]
-success_symbol = "[](bold green)"
-error_symbol = "[☢](bold red)"
+success_symbol = "[⯈](bold green)"
+error_symbol = "[𝝬](bold red)"
 vimcmd_symbol = "[](bold green)"
 
 [username]
@@ -25,6 +25,7 @@ format = "[$path]($style)[$read_only]($read_only_style)[\\]](bold red) "
 disabled = false
 
 [git_status]
+disabled = false
 ahead = "[⇡${count}](bright-green)"
 diverged = "[⇕⇡${ahead_count}](bright-blue)[⇣${behind_count}](bright-red)"
 behind = "[⇣${count}](bright-red)"
