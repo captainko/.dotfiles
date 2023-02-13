@@ -1,9 +1,9 @@
 [user]
-	email         = thongnguyen.uit@gmail.com
-	name          = captainko
+	email = thongnguyen.uit@gmail.com
+	name  = captainko
 [core]
-	editor        = nvim
-	pager         = delta
+	editor = nvim
+	pager  = delta
 [init]
 	defaultBranch = main
 [rebase]
@@ -15,6 +15,9 @@
 [push]
 	autoSetupRemote = true
 	default = current
+[maintenance.prefetch]
+	enabled = true
+        schedule = hourly
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
 [delta]
@@ -39,6 +42,7 @@
 	; ==============================================================================
 
 	b              = "branch"
+	branch-rename             = "branch --move"
 	bm             = "branch --move"
 	; bl		= "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
 	blnm           = "bl --no-merged"
@@ -166,3 +170,5 @@
 	bv-last-month = !git last-month --grep="BV2"
 
 	resign = !git rebase -i --root --exec 'git commit --amend --no-edit --no-verify -S'
+[maintenance]
+	repo = /home/cko/drives/dev/code/Projects/ttekvn/bd-vision-fe
