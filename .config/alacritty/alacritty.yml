@@ -1,6 +1,7 @@
 live_config_reload: true
 
 cursor:
+  thickness: 0.15
   style:
     blinking: Off
 
@@ -21,7 +22,11 @@ scrolling:
 
 font:
   size: 9.7
-  use_thin_stroke: false
+  draw_bold_text_with_bright_colors: true
+
+  # bold_italic:
+  #   family: "FiraCode Nerd Font Mono"
+  #   style: Light
   glyph_offset:
     x: 0
     y: 0
@@ -29,14 +34,14 @@ font:
     x: 0
     y: 0
   normal:
-    family: "FiraCode Nerd Font"
+    family: "FiraCode Nerd Font Mono"
     style: Medium
     # family: "JetBrains Mono Nerd Font"
   italic:
-    family: "FiraCode Nerd Font"
-    style: Italic
+    family: "FiraCode Nerd Font Mono"
+    style: Medium
   bold:
-    family: "FiraCode Nerd Font"
+    family: "FiraCode Nerd Font Mono"
     style: Bold
     # family: "JetBrains Mono Nerd Font"
 schemes:
@@ -185,6 +190,7 @@ colors: *onedark
 
 key_bindings:
   - { key: Grave, mods: Control, chars: "\x1b[96;5u" } # <C-`>
+  - { key: Backslash, mods: Control|Shift, chars: "\x1b[92;6u" } # <C-S-\>
   - { key: Escape, mods: Control, chars: "\x1b[27;5u" } # <C-Esc>
   - { key: Space, mods: Control, chars: "\x00" }
   - { key: Return, mods: Shift, chars: "\x1b[13;2u" }
