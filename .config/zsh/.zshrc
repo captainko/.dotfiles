@@ -248,6 +248,7 @@ else
 		npm completion
 		# deno completions bash
 		# rustup completions bash
+		[ -s "~/.bun/_bun" ] && cat "~/.bun/_bun"
 	} | sed 's/^ \+ //g' | tee /tmp/srcs | source /dev/stdin
 fi
 
