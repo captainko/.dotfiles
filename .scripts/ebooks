@@ -1,14 +1,25 @@
 #!/bin/sh
-selected=$(
+#
+PDF_VIEWER=evince
+EPUB_VIEWER=ebook-viewer
+
+SELECTED=$(
 	find ~/Downloads ~/Documents/ebooks/ ~/Documents/iot_projects -type f \( -name '*.epub' -o -name '*.pdf' -o -name '*.mobi' \) -printf '%A@ %p\0' |
 		sort -zk 1nr |
 		sed -z 's/^[^ ]* //' |
 		tr '\0' '\n' | dmenu -i -l 30
 )
-# exit if nothing is selected
-[ -z "$selected" ] && exit
-[ ! -f "$selected" ] && notify-send "$selected not found!" && exit
+# exit if nothing is SELECTED
+[ -z "$SELECTED" ] && exit
+[ ! -f "$SELECTED" ] && notify-send "$SELECTED not found!" && exit
 
-ebook-viewer "$selected" 2>/dev/null &
-echo "$selected" | xclip -selection c &
-exit
+case "$SELECTED" in
+*.pdf)
+	$PDF_VIEWER "$SELECTED" 2>/dev/null &
+	;;
+*.epub)
+	$EPUB_VIEWER "$SELECTED" 2>/dev/null &
+	;;
+esac
+
+echo "$SELECTED" | xclip -selection c &
