@@ -1,21 +1,22 @@
 #!/bin/sh
-downloads=~/Downloads
-ebooks=~/Documents/ebooks/
-epubs="$ebooks"/epub
-pdfs="$ebooks"/pdf
-isos=~/Downloads/ISO
 
-[ ! -f "$epubs" ] && mkdir -p "$epubs"
-[ ! -f "$pdfs" ] && mkdir -p "$pdfs"
-[ ! -f "$isos" ] && mkdir -p "$isos"
+DOWNLOAD_PATH=~/Downloads
+EBOOK_PATH=~/Documents/EBOOK_PATH/
+EPUB_PATH="$EBOOK_PATH"/epub
+PDF_PATH="$EBOOK_PATH"/pdf
+ISO_PATH=~/Downloads/ISO
 
-find "${downloads}" -maxdepth 1 -type f -name "*(z-lib.org).pdf" \
-	-exec mv -t "${pdfs}" {} +
-find "${downloads}" -maxdepth 1 -type f -name "*.epub" \
-	-exec mv -t "${epubs}" {} +
-find "${downloads}" -maxdepth 1 -type f -name "*.iso" \
-	-exec mv -t "${isos}" {} +
+[ ! -f "$EPUB_PATH" ] && mkdir -p "$EPUB_PATH"
+[ ! -f "$PDF_PATH" ] && mkdir -p "$PDF_PATH"
+[ ! -f "$ISO_PATH" ] && mkdir -p "$ISO_PATH"
+
+find "${DOWNLOAD_PATH}" -maxdepth 1 -type f -name "*(Z-Library).pdf" \
+	-exec mv -t "${PDF_PATH}" {} +
+find "${DOWNLOAD_PATH}" -maxdepth 1 -type f -name "*.epub" \
+	-exec mv -t "${EPUB_PATH}" {} +
+find "${DOWNLOAD_PATH}" -maxdepth 1 -type f -name "*.iso" \
+	-exec mv -t "${ISO_PATH}" {} +
 
 # remove old-ass files
 
-find "$downloads" -maxdepth 1 -type f -atime +30 -delete
+find "$DOWNLOAD_PATH" -maxdepth 1 -type f -atime +30 -delete
