@@ -2,42 +2,89 @@
 
 set -euo pipefail
 
-opt_choose_file="Choose a sound file"
-opt_play_rand="Play random sound"
-opt_stop_player="Stop sound player"
-opt_quit="Quit"
+DMENU_ARGS=("$@")
 
-opts="$opt_choose_file
+SOUND_DIR="$HOME/.scripts/data/asounds"
+SOUND_FILES=$(find "$SOUND_DIR" -iname "*.mp3" -printf "%f\n")
+
+TITLE="ambient-sound"
+
+function play_sound() {
+	title="$1"
+	file="$2"
+
+	mpv --title="$title" --loop "$SOUND_DIR/$file" >/dev/null 2>&1 &
+
+	SELECTED_SOUNDS+=("$file")
+}
+
+SELECTED_SOUNDS=()
+function select_sound() {
+	# echo "${SELECTED_SOUNDS[@]}"
+	# list=("$(printf '%s\n' "${sound[@]}")")
+	# echo "${list[@]}"
+	# echo "${sound_file[@]}"
+	# concated_sounds=("${SOUND_FILES[@]}" "${list[@]}")
+	# join_selected_sounds=$(
+	# 	SAVE_IFS="$IFS"
+	# 	IFS=$'\n'
+	# 	echo "${SELECTED_SOUNDS[*]}"
+	# 	IFS="$SAVE_IFS"
+	# )
+	# # concat_sounds=("${SELECTED_SOUNDS[@]}" "${join_selected_sounds[@]}")
+	# concat_sounds+=("${SELECTED_SOUNDS[@]}")
+	# concat_sounds+=("${join_selected_sounds[@]}")
+	# echo "$SOUND_FILES"
+	sound_file=$(
+		echo "${SOUND_FILES[@]}" | uniq -u |
+			sort |
+			dmenu -i -l 20 -p 'Choose sound file:' "${DMENU_ARGS[@]}"
+	)
+
+	play_sound "$TITLE - $sound_file" "$sound_file"
+
+}
+
+function open_menu() {
+
+	opt_choose_a_sound="Choose a sound file"
+	opt_play_rand="Play random sound"
+	opt_stop_player="Stop sound player"
+	# OPT_STOP_A_SOUND="Stop a sound"
+	opt_quit="Quit"
+
+	opts="$opt_choose_a_sound
 $opt_play_rand
 $opt_stop_player
 $opt_quit"
 
-sound_dir=$HOME/.scripts/data/asounds
-sound_files=$(find "$sound_dir" -iname "*.mp3" -printf "%f\n")
+	selected_opt=$(echo "$opts" | dmenu -i -l 7 -p 'Ambient sounds:' "${DMENU_ARGS[@]}")
 
-choice=$(echo "$opts" | dmenu -i -l 7 -p 'Ambient sounds:' "${@}")
+	# If user chooses a sound file.
+	if [ "$selected_opt" == "$opt_choose_a_sound" ]; then
+		select_sound
 
-title="ambient-sound"
+	# If user chooses to play a random sound.
+	elif [ "$selected_opt" == "$opt_play_rand" ]; then
+		rand_file=$(echo "$SOUND_FILES" | shuf -n 1)
+		# mpv --title="$TITLE - $RAND_FILE" --loop "$SOUND_DIR/$RAND_FILE" || exit
+		play_sound "$TITLE - $rand_file" "$rand_file"
 
-# If user chooses a sound file.
-if [ "$choice" == "$opt_choose_file" ]; then
-	choice=$(
-		echo "$sound_files" |
-			sort |
-			dmenu -i -l 20 -p 'Choose sound file:' "$@"
-	)
-	mpv --title="$title" --loop "$sound_dir/$choice" || exit
+	# If user chooses to stop sound playing.
+	elif [ "$selected_opt" == "$opt_stop_player" ]; then
+		pkill -f "$TITLE"
 
-# If user chooses to play a random sound.
-elif [ "$choice" == "$opt_play_rand" ]; then
-	getRand=$(echo "$sound_files" | shuf -n 1)
-	mpv --title="$title" --loop "$sound_dir/$getRand" || exit
+	# elif [ "$opt" == "$OPT_STOP_A_SOUND" ]; then
+	# 	pkill -f "$TITLE"
 
-# If user chooses to stop sound playing.
-elif [ "$choice" == "$opt_stop_player" ]; then
-	pkill -f "$title"
+	# What to do if we just escape without choosing anything.
+	else
+		echo "Program terminated."
+		exit
+	fi
 
-# What to do if we just escape without choosing anything.
-else
-	echo "Program terminated." && exit 0
-fi
+}
+
+while :; do
+	open_menu
+done
