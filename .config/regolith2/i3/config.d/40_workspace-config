@@ -298,6 +298,7 @@ for_window [class="skype"] floating disable, resize set width 100, move containe
 for_window [title="skype"] floating enable, resize set width 100, move container to workspace number $ws9
 for_window [class="skype" window_role="browser-window"] floating disable, resize set width 100, move container to workspace number $ws9
 for_window [class="Microsoft Teams - Preview"] floating disable, move container to workspace number $ws9
+for_window [title="Meeting | Microsoft Teams"] floating disable, move container to workspace number $ws9
 for_window [class="flameshot"] floating enable
 for_window [title="^Android Emulator -"] floating enable, resize set 344 637, move position -15 446
 
@@ -390,10 +391,11 @@ bindsym $mod+z gaps outer current plus 6
 ###############################################################################
 
 # Disable titlebar
-set_from_resource $i3-wm.window.border.size i3-wm.window.border.size 1
-set_from_resource $i3-wm.floatingwindow.border.size i3-wm.floatingwindow.border.size 1
-default_border pixel $i3-wm.window.border.size
-default_floating_border pixel $i3-wm.floatingwindow.border.size
+for_window [class="^.*"] border pixel 2
+# set_from_resource $i3-wm.window.border.size i3-wm.window.border.size 1
+# set_from_resource $i3-wm.floatingwindow.border.size i3-wm.floatingwindow.border.size 1
+# default_border pixel $i3-wm.window.border.size
+# default_floating_border pixel $i3-wm.floatingwindow.border.size
 
 # Specify the distance between windows in pixels. (i3-gaps)
 set_from_resource $i3-wm.gaps.inner.size i3-wm.gaps.inner.size 5
