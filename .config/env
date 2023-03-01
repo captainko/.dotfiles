@@ -102,7 +102,7 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig
 export CMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/cmake/
 
 # flutter
-PATH="$PATH:$HOME/.local/src/flutter/bin"
+PATH="$PATH:$HOME/drives/dev/contributes/flutter/bin"
 # flutter-pub
 PATH="$PATH:$HOME/.pub-cache/bin"
 
