@@ -1,5 +1,5 @@
 os:
-  editCommand: "nvim" # as an example
+  edit: "nvim" # as an example
 gui:
   showIcons: true
   authorColors:
