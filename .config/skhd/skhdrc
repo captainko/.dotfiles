@@ -77,10 +77,10 @@
 # ############################################################### #
 
 # focus window
-ctrl + cmd - h : yabai -m window --focus west
-ctrl + cmd - j : yabai -m window --focus south
-ctrl + cmd - k : yabai -m window --focus north
-ctrl + cmd - l : yabai -m window --focus east
+ctrl + cmd - h : yabai_focus_window west
+ctrl + cmd - j : yabai_focus_window south
+ctrl + cmd - k : yabai_focus_window north
+ctrl + cmd - l : yabai_focus_window east
 
 # Applications
 cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
@@ -91,11 +91,10 @@ cmd + shift - return : open -na "Brave Browser"
 
 # move managed window
 # shift + ctrl - h : yabai -m window --warp west
-shift + ctrl - h : WIN_ID=$(yabai -m query --windows --window | jq '.id'); yabai -m window --swap west; [[ ! $? == 0 ]] && (yabai -m display --focus west; yabai -m window last --insert east; yabai -m window --focus $WIN_ID; yabai -m window --display prev; yabai -m window --focus $WIN_ID);
-shift + ctrl - j : yabai -m window --warp south
-shift + ctrl - k : yabai -m window --warp north
-# shift + ctrl - l : yabai -m window --warp east
-shift + ctrl - l : WIN_ID=$(yabai -m query --windows --window | jq '.id'); yabai -m window --swap east; [[ ! $? == 0 ]] && (yabai -m display --focus east; yabai -m window first --insert west; yabai -m window --focus $WIN_ID; yabai -m window --display next; yabai -m window --focus $WIN_ID);
+shift + ctrl - h : yabai_move_window west
+shift + ctrl - j : yabai_move_window south
+shift + ctrl - j : yabai_move_window north
+shift + ctrl - l : yabai_move_window east
 
 # balance size of windows
 cmd + alt - 0 : yabai -m space --balance

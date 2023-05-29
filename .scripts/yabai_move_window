@@ -1,0 +1,47 @@
+#!/usr/bin/env sh
+
+DIRECT=$1 # north; east; south; west
+
+WIN_ID=$(yabai -m query --windows --window | jq '.id')
+
+if yabai -m window --swap "$DIRECT"; then
+	exit
+fi
+
+WIN_POS=''
+SCREEN_POS=''
+INSERT_DIRECT=''
+
+case "$DIRECT" in
+
+"east")
+	WIN_POS="first"
+	SCREEN_POS="next"
+	INSERT_DIRECT="west"
+	;;
+
+"south")
+	WIN_POS="first"
+	SCREEN_POS="next"
+	INSERT_DIRECT="north"
+	;;
+
+"west")
+	WIN_POS="last"
+	SCREEN_POS="prev"
+	INSERT_DIRECT="east"
+	;;
+"north")
+	WIN_POS="last"
+	SCREEN_POS="prev"
+	INSERT_DIRECT="south"
+	;;
+
+esac
+
+if yabai -m display --focus "$DIRECT"; then
+	yabai -m window "$WIN_POS" --insert "$INSERT_DIRECT"
+	yabai -m window --focus "$WIN_ID"
+	yabai -m window --display "$SCREEN_POS"
+	yabai -m window --focus "$WIN_ID"
+fi

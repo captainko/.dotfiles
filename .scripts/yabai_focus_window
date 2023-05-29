@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+DIRECTTION=$1 # north; east; south; west
+
+# WIN_ID=$(yabai -m query --windows --window | jq '.id')
+
+if yabai -m window --focus "$DIRECTTION"; then
+	exit
+fi
+
+yabai -m display --focus "$DIRECTTION"
+# yabai -m window last --insert "$DIRECTTION"
+# yabai -m window --focus "$WIN_ID"
+# yabai -m window --display prev
+# yabai -m window --focus "$WIN_ID"
