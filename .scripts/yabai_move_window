@@ -2,46 +2,53 @@
 
 DIRECT=$1 # north; east; south; west
 
-WIN_ID=$(yabai -m query --windows --window | jq '.id')
-
 if yabai -m window --swap "$DIRECT"; then
 	exit
 fi
 
-WIN_POS=''
-SCREEN_POS=''
+WIN_SEL=''
+# SCREEN_POS=''
 INSERT_DIRECT=''
 
 case "$DIRECT" in
 
 "east")
-	WIN_POS="first"
-	SCREEN_POS="next"
+	WIN_SEL="first"
+	# SCREEN_POS="next"
 	INSERT_DIRECT="west"
 	;;
 
 "south")
-	WIN_POS="first"
-	SCREEN_POS="next"
+	WIN_SEL="first"
+	# SCREEN_POS="next"
 	INSERT_DIRECT="north"
 	;;
 
 "west")
-	WIN_POS="last"
-	SCREEN_POS="prev"
+	WIN_SEL="last"
+	# SCREEN_POS="prev"
 	INSERT_DIRECT="east"
 	;;
+
 "north")
-	WIN_POS="last"
-	SCREEN_POS="prev"
+	WIN_SEL="last"
+	# SCREEN_POS="prev"
 	INSERT_DIRECT="south"
+	;;
+
+*)
+	echo "Invalid DIRECT: $DIRECT"
+	exit 1
 	;;
 
 esac
 
+WIN_ID=$(yabai -m query --windows --window | jq '.id')
+
 if yabai -m display --focus "$DIRECT"; then
-	yabai -m window "$WIN_POS" --insert "$INSERT_DIRECT"
+
+	yabai -m window "$WIN_SEL" --insert "$INSERT_DIRECT"
 	yabai -m window --focus "$WIN_ID"
-	yabai -m window --display "$SCREEN_POS"
+	yabai -m window --display "$DIRECT"
 	yabai -m window --focus "$WIN_ID"
 fi
