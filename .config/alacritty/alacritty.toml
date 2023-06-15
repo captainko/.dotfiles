@@ -107,7 +107,7 @@ chars = "\u001b[13;6u"
 [[keyboard.bindings]]
 key = "N"
 mods = "Control|Shift"
-action = "SpawnNewInstance"
+action = "CreateNewWindow"
 
 [[keyboard.bindings]]
 key = "Minus"
