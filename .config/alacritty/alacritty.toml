@@ -1,0 +1,125 @@
+live_config_reload = true
+
+[cursor]
+thickness = 0.15
+
+[cursor.style]
+blinking = "Off"
+
+[window]
+decorations = "none"
+opacity = 0.45
+
+[window.padding]
+x = 1
+y = 2
+
+[scrolling]
+history = 10_000
+multiplier = 10
+
+[font]
+size = 13.7
+# draw_bold_text_with_bright_colors = true
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "FiraCode Nerd Font Mono"
+style = "Medium"
+
+[font.italic]
+family = "FiraCode Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font Mono"
+style = "SemiBold"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font Mono"
+style = "Light"
+
+[colors.primary]
+foreground = "0xabb2bf"
+
+[colors.normal]
+black = "0x1e2127"
+red = "0xe06c75"
+green = "0x98c379"
+yellow = "0xd19a66"
+blue = "0x61afef"
+magenta = "0xc678dd"
+cyan = "0x56b6c2"
+white = "0xabb2bf"
+
+[colors.bright]
+black = "0x5c6370"
+red = "0xe06c75"
+green = "0x98c379"
+yellow = "0xd19a66"
+blue = "0x61afef"
+magenta = "0xc678dd"
+cyan = "0x56b6c2"
+white = "0xffffff"
+
+[[keyboard.bindings]]
+key = "Grave"
+mods = "Control"
+chars = "\u001b[96;5u"
+
+[[keyboard.bindings]]
+key = "Backslash"
+mods = "Control|Shift"
+chars = "\u001b[92;6u"
+
+[[keyboard.bindings]]
+key = "Escape"
+mods = "Control"
+chars = "\u001b[27;5u"
+
+[[keyboard.bindings]]
+key = "Space"
+mods = "Control"
+chars = "\u0000"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001b[13;2u"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Control"
+chars = "\u001b[13;5u"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Control|Shift"
+chars = "\u001b[13;6u"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control|Alt"
+chars = "\u001b[2d;7u"
+
+[[keyboard.bindings]]
+key = "Equals"
+mods = "Control|Alt"
+chars = "\u001b[2d;7u"
+
+[[keyboard.bindings]]
+key = "Back"
+mods = "Control"
+chars = "\u0017"

@@ -6,10 +6,11 @@ cursor:
     blinking: Off
 
 window:
+  decorations: none
   padding:
-    x: 0
-    y: 0
-  opacity: 0.5
+    x: 1
+    y: 2
+  opacity: 0.45
 
 scrolling:
   # Maximum number of lines in the scrollBack buffer.
@@ -21,12 +22,9 @@ scrolling:
   multiplier: 10
 
 font:
-  size: 9.7
+  size: 13.7
   draw_bold_text_with_bright_colors: true
 
-  # bold_italic:
-  #   family: "FiraCode Nerd Font Mono"
-  #   style: Light
   glyph_offset:
     x: 0
     y: 0
@@ -34,15 +32,20 @@ font:
     x: 0
     y: 0
   normal:
-    family: "FiraCode Nerd Font Mono"
+    family: FiraCode Nerd Font Mono
     style: Medium
-    # family: "JetBrains Mono Nerd Font"
+
   italic:
-    family: "FiraCode Nerd Font Mono"
-    style: Medium
+    family: FiraCode Nerd Font Mono
+    style: Regular
+
   bold:
+    family: FiraCode Nerd Font Mono
+    style: SemiBold
+
+  bold_italic:
     family: "FiraCode Nerd Font Mono"
-    style: Bold
+    style: Light
     # family: "JetBrains Mono Nerd Font"
 schemes:
   # prettier-ignore
@@ -77,7 +80,8 @@ schemes:
      primary:
       # background: '#301934'
        # background: '#191970'
-      background: '0x1e2127'
+      # background: '0x1e2127'
+      # background: '#282c34'
       foreground: '0xabb2bf'
 
     # Normal colors
