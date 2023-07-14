@@ -70,7 +70,7 @@ cyan = "0x56b6c2"
 white = "0xffffff"
 
 [[keyboard.bindings]]
-key = "Grave"
+key = "`"
 mods = "Control"
 chars = "\u001b[96;5u"
 
