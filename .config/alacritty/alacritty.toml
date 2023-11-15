@@ -3,12 +3,16 @@ live_config_reload = true
 [cursor]
 thickness = 0.15
 
+[mouse]
+hide_when_typing = true
+
 [cursor.style]
 blinking = "Off"
 
 [window]
 decorations = "none"
 opacity = 0.45
+blur = true
 
 [window.padding]
 x = 1
@@ -18,8 +22,11 @@ y = 2
 history = 10_000
 multiplier = 10
 
+[selection]
+save_to_clipboard = true
+
 [font]
-size = 13.7
+size = 8
 # draw_bold_text_with_bright_colors = true
 
 [font.glyph_offset]
@@ -35,16 +42,19 @@ family = "FiraCode Nerd Font Mono"
 style = "Medium"
 
 [font.italic]
-family = "FiraCode Nerd Font Mono"
-style = "Regular"
+# family = "FiraCode Nerd Font Mono"
+family = "JetBrainsMono Nerd Font"
+style = "Medium Italic"
 
 [font.bold]
 family = "FiraCode Nerd Font Mono"
-style = "SemiBold"
+# family = "JetBrainsMono Nerd Font"
+style = "Bold"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font Mono"
-style = "Light"
+# family = "FiraCode Nerd Font Mono"
+family = "JetBrainsMono Nerd Font"
+style = "SemiBold Italic"
 
 [colors.primary]
 foreground = "0xabb2bf"
