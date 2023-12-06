@@ -1,0 +1,25 @@
+# set $pctl playerctl -p playerctld
+
+# # Skip Forward/backwards
+# bindsym XF86AudioPrev exec --no-startup-id $pctl previous
+# bindsym XF86AudioNext exec --no-startup-id $pctl next
+
+# bindsym $mod+Prior exec --no-startup-id $pctl previous
+# bindsym $mod+Next  exec --no-startup-id $pctl next
+
+# # <snip>
+
+# # Next/Previous player in playerctld
+# bindsym $mod+XF86AudioPrev exec playerctld unshift && notify-send \
+#     "Now controlling player $(playerctl -l | head -n1)" --app-name playerctld
+# bindsym $mod+XF86AudioNext exec playerctld   shift && notify-send \
+#     "Now controlling player $(playerctl -l | head -n1)" --app-name playerctld
+
+# bindsym $mod+Shift+button8 --whole-window exec playerctld unshift && notify-send \
+#     "Now controlling player $(playerctl -l | head -n1)" --app-name playerctld
+# bindsym $mod+Shift+button9 --whole-window exec playerctld   shift && notify-send \
+#     "Now controlling player $(playerctl -l | head -n1)" --app-name playerctld
+
+# bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%

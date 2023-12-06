@@ -57,7 +57,7 @@ s_list=(
 
 	'd:~/.dotfiles'
 	'n:~/drives/dev/contributes/neovim'
-	's:~/.scripts/'
+	's:~/.local/bin/'
 	'v:~/.config/nvim'
 )
 

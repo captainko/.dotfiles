@@ -20,8 +20,10 @@ PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin/"
 # docker
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
-# rust
+# Rust
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+PATH="$PATH:$CARGO_HOME/bin"
 # go
 GOPATH="$XDG_DATA_HOME/go"
 export GOBIN="$GOPATH/bin"
@@ -51,7 +53,7 @@ alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME/nvidia/setting
 
 # npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-PATH="$PATH:./node_modules/.bin/"
+PATH="$PATH:./node_modules/.bin/:$XDG_DATA_HOME/npm/bin"
 
 # less
 export LESSKEY="$XDG_CONFIG_HOME/less/lesskey"
@@ -134,9 +136,6 @@ export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export REDISCLI_HISTFILE="$XDG_DATA_HOME"/redis/rediscli_history
 export REDISCLI_RCFILE="$XDG_CONFIG_HOME"/redis/redisclirc
 
-# Rust
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-
 # VSCode
 export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 
@@ -173,4 +172,4 @@ export XMONAD_DATA_DIR="$XDG_DATA_HOME/xmonad"
 XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
 
 export XDG_DATA_DIRS
-export PATH="$PATH"
+export PATH="$HOME/.local/bin:$PATH"

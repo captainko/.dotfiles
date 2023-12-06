@@ -1,0 +1,7 @@
+# for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+
+bindsym print exec flameshot full -p $dir
+bindsym ctrl+print exec flameshot full -c
+bindsym ctrl+shift+print exec flameshot gui
+bindsym ctrl+alt+print exec flameshot screen -c
+bindsym alt+print exec flameshot screen

@@ -1,6 +1,6 @@
 #!/bin/sh
 # quickly navigate to any defined projects
-. "$HOME/.scripts/_z"
+. "$HOME/.local/bin/_z"
 
 # ls="ls --color=yes -lah --group-directories-first" \
 # gh='history|grep' \
@@ -42,6 +42,7 @@ alias aptu="sudo apt update && sudo apt upgrade" \
 	cfa='vim $DOTFILES/.config/aliasrc' \
 	cfx='vim $DOTFILES/.config/xmonad/xmonad.hs' \
 	cfs='vim $DOTFILES/.config/starship.toml' \
+	cfsw='vim $DOTFILES/.config/sway/config' \
 	cfat='vim $DOTFILES/.config/alacritty/alacritty.toml' \
 	cfe='vim $DOTFILES/.config/env' \
 	cfd='vim ~/.scripts/_z' \
