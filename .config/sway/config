@@ -28,6 +28,11 @@ input type:keyboard {
     repeat_rate 80
 }
 
+focus_follows_mouse no
+workspace_auto_back_and_forth yes
+#default_border pixel 2
+#titlebar_border_thickness 2
+gaps inner 6
 # services
 # exec_always /usr/libexec/fcitx5-wayland-launcher
 exec /usr/libexec/fcitx5-wayland-launcher
@@ -82,6 +87,8 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Kill focused window
     bindsym $mod+w kill
 
+    # Kill lock scree
+    bindsym $mod+shift+p exec swaylock
     # Start your launcher
     bindsym $mod+d exec $menu
 
@@ -160,6 +167,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    bindsym $mod+Tab workspace next
+    bindsym $mod+Grave workspace back_and_forth
 #
 # Layout stuff:
 #
@@ -172,7 +182,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Switch the current container between different layout styles
     # bindsym $mod+s layout stacking
     # bindsym $mod+q layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+e layout toggle all
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -185,6 +195,11 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    bindsym $mod+y resize grow height 5 ppt
+    bindsym $mod+Shift+y resize shrink height 5 ppt
+    bindsym $mod+x resize grow width 5 ppt
+    bindsym $mod+Shift+x resize shrink width 5 ppt
 #
 # Scratchpad:
 #
@@ -205,16 +220,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 5 ppt
+    bindsym $down resize grow height 5 ppt
+    bindsym $up resize shrink height 5 ppt
+    bindsym $right resize grow width 5 ppt
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 5 ppt
+    bindsym Down resize grow height 5 ppt
+    bindsym Up resize shrink height 5 ppt
+    bindsym Right resize grow width 5 ppt
 
     # Return to default mode
     bindsym Return mode "default"
@@ -243,4 +258,3 @@ bar {
 
 include /etc/sway/config.d/*
 include ./config.d/*
-include ./custom
