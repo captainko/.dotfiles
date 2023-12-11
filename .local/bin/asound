@@ -4,7 +4,7 @@ set -euo pipefail
 
 DMENU_ARGS=("$@")
 
-SOUND_DIR="$HOME/.scripts/data/asounds"
+SOUND_DIR="$HOME/.local/bin/data/asounds"
 SOUND_FILES=$(find "$SOUND_DIR" -iname "*.mp3" -printf "%f\n")
 
 TITLE="ambient-sound"
