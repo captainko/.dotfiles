@@ -17,7 +17,7 @@ set $right l
 set $term alacritty
 
 # Your preferred browser
-set $browser brave-browser-stable --gtk-version=4 --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
+set $browser brave-browser-stable --gtk-version=4 --enable-features=UseOzonePlatform --ozone-platform=wayland
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -32,7 +32,7 @@ focus_follows_mouse no
 workspace_auto_back_and_forth yes
 #default_border pixel 2
 #titlebar_border_thickness 2
-gaps inner 6
+gaps inner 4
 # services
 # exec_always /usr/libexec/fcitx5-wayland-launcher
 exec /usr/libexec/fcitx5-wayland-launcher

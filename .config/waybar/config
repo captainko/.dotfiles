@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 24, // Waybar height (to be removed for auto height)
+    // "height": 24, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     //"spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -23,10 +23,11 @@
         "memory",
         "network",
         "pulseaudio",
+        "bluetooth",
         "backlight",
         "keyboard-state",
-        "battery",
-        "battery#bat2",
+        // "battery",
+        // "battery#bat2",
         "tray",
         "clock"
     ],
@@ -175,12 +176,13 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)  ",
-        "format-ethernet": " {ifname}",
+        "format-wifi": "{essid} ({signalStrength}%)   ↑{bandwidthUpBytes} ↓{bandwidthDownBytes}",
+        "format-ethernet": " {ifname} ↑{bandwidthUpBytes} ↓{bandwidthDownBytes}",
         "tooltip-format": " {ifname} via {gwaddr}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠ {ifname}",
-        "format-alt": " {ifname}: {ipaddr}/{cidr}"
+        "format-alt": " {ifname}: {ipaddr}/{cidr}",
+        "on-click-middle": "$HOME/.local/bin/wifi_menu"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -216,5 +218,16 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "$HOME/.local/bin/bluetooth_toggle"
     }
 }

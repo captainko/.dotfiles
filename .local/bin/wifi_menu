@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+# wifi-menu
+notify-send -t 1000 "Getting WiFi networks..."
+chosen_network=$(nmcli -g SSID device wifi | wofi --show=dmenu -i -p "Wifi network" -no-custom)
+if [[ -z $chosen_network ]]; then
+	# If we have not chosen a network, the previous command will return an empty string
+	# and we can exit right away
+	exit 1
+fi
+
+
+if nmcli -g NAME connection | grep -q "$chosen_network" ; then
+    nmcli connection up id "$chosen_network"
+else
+    nmcli device wifi connect "$chosen_network"
+fi

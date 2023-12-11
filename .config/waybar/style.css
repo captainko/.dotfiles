@@ -87,7 +87,8 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#mpd {
+#mpd,
+#bluetooth {
   margin: 2px;
   padding-left: 4px;
   padding-right: 4px;

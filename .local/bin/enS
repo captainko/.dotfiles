@@ -1,5 +1,5 @@
 #!/bin/sh
-for f in ~/.scripts/*; do
+for f in ~/.local/bin/*; do
 	echo "$f"
 	chmod +x "$f"
 done
