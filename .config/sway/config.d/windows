@@ -1,0 +1,2 @@
+assign [class="Slack"] workspace 10
+assign [title="^Microsoft Teams"] workspace 10

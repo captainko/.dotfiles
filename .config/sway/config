@@ -30,6 +30,7 @@ input type:keyboard {
 
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
+focus_on_window_activation smart
 #default_border pixel 2
 #titlebar_border_thickness 2
 gaps inner 4
@@ -42,7 +43,8 @@ set $nc swaync-client -t -sw
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Wallpapers/103406.jpg fill
+# output * bg ~/Pictures/Wallpapers/103406.jpg fill
+output * bg /usr/share/backgrounds/fedora-workstation/glasscurtains_dark.webp fill
 #
 # Example configuration:
 #
