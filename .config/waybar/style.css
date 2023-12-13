@@ -58,7 +58,7 @@ button:hover {
 }
 
 #workspaces button {
-  padding: 0 8px;
+  padding: 0 4px;
   color: @hint;
   /* background-color: rgba(0, 0, 0, 0.3); */
 }
@@ -75,7 +75,7 @@ button:hover {
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b
+  background-color: #eb4d4b;
   color: @info
 }
 
