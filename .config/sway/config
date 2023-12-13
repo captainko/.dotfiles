@@ -28,8 +28,8 @@ input type:keyboard {
     repeat_rate 80
 }
 # remove title
-default_border none
-default_floating_border none
+default_border pixel 3
+default_floating_border pixel 3
 font pango:monospace 0
 titlebar_padding 1
 titlebar_border_thickness 0
@@ -96,7 +96,7 @@ output * bg /usr/share/backgrounds/fedora-workstation/glasscurtains_dark.webp fi
     bindsym $mod+w kill
 
     # Kill lock scree
-    bindsym $mod+shift+p exec swaylock
+    bindsym $mod+Escape exec swaylock
     # Start your launcher
     bindsym $mod+d exec $menu
 
