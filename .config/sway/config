@@ -49,8 +49,8 @@ set $nc swaync-client -t -sw
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg ~/Pictures/Wallpapers/103406.jpg fill
-output * bg /usr/share/backgrounds/fedora-workstation/glasscurtains_dark.webp fill
+output * bg ~/Pictures/Wallpapers/dreamy_night_by_bisbiswas_deaka30.jpg fill
+# output * bg /usr/share/backgrounds/fedora-workstation/glasscurtains_dark.webp fill
 #
 # Example configuration:
 #
@@ -263,6 +263,12 @@ bar {
     #     inactive_workspace #32323200 #32323200 #5c5c5c
     # }
 }
+
+client.focused              #0a0b16 #323842 #C678DD #C678DD   #C678DD
+client.focused_inactive     #323842 #323842 #d8dee8 #323842   #323842
+client.unfocused            #323842 #323842 #d8dee8 #323842   #323842
+client.urgent               #323842 #323842 #d8dee8 #E06C75   #E06C75
+client.placeholder          #323842 #323842 #d8dee8 #323842   #323842
 
 include /etc/sway/config.d/*
 include ./config.d/*
