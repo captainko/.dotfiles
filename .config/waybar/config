@@ -17,15 +17,15 @@
     //"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock", "tray"],
     "modules-right": [
         "mpd",
+        "network",
         "idle_inhibitor",
         "temperature",
         "cpu",
         "memory",
-        "network",
         "pulseaudio",
         "bluetooth",
         "backlight",
-        "keyboard-state",
+        // "keyboard-state",
         // "battery",
         // "battery#bat2",
         "tray",
@@ -78,17 +78,17 @@
         "unknown-tag": "N/A",
         "interval": 2,
         "consume-icons": {
-            "on": " "
+            "on": ""
         },
         "random-icons": {
             //            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
+            "on": ""
         },
         "repeat-icons": {
-            "on": " "
+            "on": ""
         },
         "single-icons": {
-            "on": "1 "
+            "on": "1"
         },
         "state-icons": {
             "paused": "",
@@ -110,7 +110,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 5
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -118,9 +118,24 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "  {usage}%"
-        //        "tooltip": false
+        "format": "  {usage}%",
+        "on-click": "alacritty -e htop"
+        // "tooltip": false
     },
+    // "cpu": {
+    //     "interval": 1,
+    //     "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}",
+    //     "format-icons": [
+    //         "<span color='#69ff94'>▁</span>", // green
+    //         "<span color='#2aa9ff'>▂</span>", // blue
+    //         "<span color='#f8f8f2'>▃</span>", // white
+    //         "<span color='#f8f8f2'>▄</span>", // white
+    //         "<span color='#ffffa5'>▅</span>", // yellow
+    //         "<span color='#ffffa5'>▆</span>", // yellow
+    //         "<span color='#ff9977'>▇</span>", // orange
+    //         "<span color='#dd532e'>█</span>" // red
+    //     ]
+    // },
     "memory": {
         "format": "  {}%"
     },
@@ -131,9 +146,11 @@
         "format-critical": "{icon} {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
         "format-icons": [
-            "",
+            // "",
             "",
-            ""
+            "",
+            ""
+            // ""
         ]
     },
     "backlight": {
@@ -175,6 +192,7 @@
         "bat": "BAT2"
     },
     "network": {
+        "interval": 2,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%)   ↑{bandwidthUpBytes} ↓{bandwidthDownBytes}",
         "format-ethernet": " {ifname} ↑{bandwidthUpBytes} ↓{bandwidthDownBytes}",
