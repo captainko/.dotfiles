@@ -17,5 +17,6 @@ export XDG_SESSION_DESKTOP=sway
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+export PATH="$HOME/.local/bin:$PATH"
 
 exec sway
