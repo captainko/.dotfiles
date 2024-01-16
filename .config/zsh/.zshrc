@@ -19,6 +19,8 @@ source $PLUGIN_DIR/zsh-yarn-autocompletions/yarn-autocompletions.plugin.zsh
 unsetopt nomatch
 # History in cache directory:
 
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
 # [ ! -f $HISTFILE ] && mkdir "${HISTFILE%/*}" ; touch $HISTFILE
 # Basic auto/tab complete:
 
@@ -65,14 +67,17 @@ setopt AUTOPARAMSLASH # tab completing directory appends a slash
 setopt SHARE_HISTORY  # Share your history across all your terminal windows
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
+setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 HISTSIZE=100000
 SAVEHIST=100000
-# HISCONTROL=ignoreboth:erasedups
+HISCONTROL=ignoreboth:erasedups
 HISTFILE=~/.cache/zsh/history
 
 export KEYTIMEOUT=25

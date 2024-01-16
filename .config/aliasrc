@@ -11,7 +11,7 @@ alias aptu="sudo apt update && sudo apt upgrade" \
 	fd="fd --color 'always'" \
 	pd="cd ~-" \
 	lst="!:0" \
-	ls="exa -lah --group-directories-first --color=always" \
+	ls="eza -olah --group-directories-first --color=always" \
 	ll="ls --color=always -lah | less -R" \
 	lsa="ls -la" \
 	df="df -h" \
@@ -43,6 +43,7 @@ alias aptu="sudo apt update && sudo apt upgrade" \
 	cfx='vim $DOTFILES/.config/xmonad/xmonad.hs' \
 	cfs='vim $DOTFILES/.config/starship.toml' \
 	cfsw='vim $DOTFILES/.config/sway/config' \
+	cfwb='vim $DOTFILES/.config/waybar/config' \
 	cfat='vim $DOTFILES/.config/alacritty/alacritty.toml' \
 	cfe='vim $DOTFILES/.config/env' \
 	cfd='vim ~/.scripts/_z' \
@@ -71,7 +72,6 @@ alias aptu="sudo apt update && sudo apt upgrade" \
 	cp='cp -iv' \
 	cfssh="vim ~/.ssh/config" \
 	jq="jq -C" \
-	mpv='swallow mpv' \
 	cD='cd ~/Downloads' \
 	tt='trash' \
 	v='vim' \

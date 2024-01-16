@@ -1,6 +1,6 @@
 #!/bin/bash
 export DOTFILES=$HOME/.dotfiles
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/local/bin/nvim"
 # highlight for less
 export LESS='-R'
 export LESS_TERMCAP_mb=$'\e[1;31m'   # begin bold
@@ -146,11 +146,17 @@ export UNCRUSTIFY_CONFIG="$XDG_CONFIG_HOME/uncrustify/default.cfg"
 # prisma
 export CHECKPOINT_DISABLE=1 # opt-out of data collection
 
-[[ -n "$(command -v fnm)" ]] && fnm env --use-on-cd | source /dev/stdin
+if [[ -n "$(command -v fnm)" ]]; then
+	fnm env --use-on-cd | source /dev/stdin
+	export FNM_LOGLEVEL='quiet'
+fi
 
-# sdk
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# sdkman
+if [[ -n "$(command -v sdkman)" ]]; then
+	export SDKMAN_DIR="$HOME/.sdkman"
+	[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 PATH="$PATH:$HOME/.rvm/bin"
