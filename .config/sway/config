@@ -17,7 +17,8 @@ set $right l
 set $term alacritty msg create-window || alacritty
 
 # Your preferred browser
-set $browser brave-browser-stable --gtk-version=4 --enable-features=UseOzonePlatform --ozone-platform=wayland
+set $browser brave-browser-stable --gtk-version=4
+# --enable-features=UseOzonePlatform --ozone-platform=wayland
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -48,6 +49,7 @@ exec {
     /usr/libexec/geoclue-2.0/demos/agent
     gammastep-indicator
     nm-applet
+    /usr/libexec/polkit-gnome-authentication-agent-1
 }
 
 set $nc swaync-client -t -sw
@@ -199,6 +201,7 @@ output * bg ~/Pictures/Wallpapers/dreamy_night_by_bisbiswas_deaka30.jpg fill
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
+    # bindsym $mod+f exec maximize
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+f floating toggle

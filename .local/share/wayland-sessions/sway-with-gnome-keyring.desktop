@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Sway with Gnome Keyring
+Comment=Sway with gnome keyring
+Exec=/home/cko/.local/bin/start-sway.sh
+Type=Application

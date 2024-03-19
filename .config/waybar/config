@@ -119,7 +119,8 @@
     },
     "cpu": {
         "format": "  {usage}%",
-        "on-click": "alacritty -e htop"
+        "on-click": "alacritty -e htop",
+        "interval": 2
         // "tooltip": false
     },
     // "cpu": {
