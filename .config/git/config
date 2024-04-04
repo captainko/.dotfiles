@@ -170,7 +170,7 @@
 	; ==============================================================================
         last-month    = !"git --no-pager log --author=\"`git config user.name`\" --since={`date --date='1 month ago' +%Y-%m-%d`} --oneline --format=\"%s\""
 	bv-last-month = !git last-month --grep="BV2"
-
 	resign = !git rebase -i --root --exec 'git commit --amend --no-edit --no-verify -S'
-[maintenance]
-	repo = /home/cko/drives/dev/code/Projects/ttekvn/bd-vision-fe
+
+[includeIf "hasconfig:remote.*.url:git@bitbucket.org:ttekvn/**"]
+	path = ~/.config/git/ttek.config
