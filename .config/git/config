@@ -1,10 +1,17 @@
 [user]
 	email = thongnguyen.uit@gmail.com
 	name  = captainko
+	signingkey = B985C60CB43E0EE7
 [core]
 	editor = nvim
 	pager  = delta
 	autocrlf = input
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[gpg.ssh]
+	allowedSignersFile = ~/.config/git/allow_signers
 [init]
 	defaultBranch = main
 [rebase]
@@ -31,6 +38,7 @@
 	diffFilter = delta --color-only
 [diff]
 	colorMoved = zebra
+	algorithm = histogram
 [alias]
 	; @reference https://github.com/GitAlias/gitalias
 	; ==============================================================================
@@ -44,9 +52,9 @@
 	; ==============================================================================
 
 	b              = "branch"
-	branch-rename             = "branch --move"
+	branch-rename  = "branch --move"
 	bm             = "branch --move"
-	; bl		= "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
+	; bl           = "branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(color:blue)%(authorname)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'"
 	blnm           = "bl --no-merged"
 	which          = "!git branch -a | grep -i"
 	current-branch = rev-parse --abbrev-ref HEAD
@@ -119,7 +127,7 @@
 	; Push
 	; ==============================================================================
 	P       = "push"
-	Pf      = "push --force"
+	Pf      = "push --force-with-lease"
 	lucky   = "!sh -c `git checkout $(git which $1 -m1)` -"
 	standup = "!git log --all --since=yesterday.9:00am --format=%s"
 	latest  = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
@@ -174,3 +182,6 @@
 
 [includeIf "hasconfig:remote.*.url:git@bitbucket.org:ttekvn/**"]
 	path = ~/.config/git/ttek.config
+
+[includeIf "hasconfig:remote.*.url:git@github.com:Quy-Khanh-IT/**"]
+	path = ~/.config/git/qkit.config
