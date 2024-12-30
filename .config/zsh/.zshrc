@@ -1,4 +1,4 @@
-xset r rate 200 80
+# xset r rate 200 80
 
 [[ ! $- == *i* ]] && return
 
@@ -14,7 +14,7 @@ __DOTS[ITALIC_OFF]=$'\e[23m'
 
 PLUGIN_DIR=~/.config/zsh/plugins
 source $PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $PLUGIN_DIR/zsh-yarn-autocompletions/yarn-autocompletions.plugin.zsh
+#source $PLUGIN_DIR/zsh-yarn-autocompletions/yarn-autocompletions.plugin.zsh
 # Customize by CKO
 unsetopt nomatch
 # History in cache directory:
@@ -246,15 +246,20 @@ if [ -f /tmp/srcs ]; then
 else
 	{
 		starship init zsh --print-full-init
+		docker completion zsh
 		# minikube completion zsh
-		kubectl completion zsh
-		k3d completion zsh
+		# kubectl completion zsh
+		# k3d completion zsh
 		node --completion-bash
 		npm completion
-		# deno completions bash
+		deno completions bash
 		# rustup completions bash
 		[ -s "~/.bun/_bun" ] && cat "~/.bun/_bun"
 	} | sed 's/^ \+ //g' | tee /tmp/srcs | source /dev/stdin
 fi
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 # vim:	noexpandtab shiftwidth=4 tabstop=4 :
