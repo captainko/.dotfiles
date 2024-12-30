@@ -1,0 +1,5 @@
+font-family="FiraCode Nerd Font Mono"
+font-size=11
+window-inherit-font-size=true
+confirm-close-surface=false
+gtk-titlebar=false
