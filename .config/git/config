@@ -15,8 +15,9 @@
 [init]
 	defaultBranch = main
 [rebase]
-	autosquash = true
-	autoStash = true
+	autoSquash = true
+	autoStash  = true
+	updateRefs = true
 [commit]
 	gpgsign = false
 [pull]
@@ -184,4 +185,15 @@
 	path = ~/.config/git/ttek.config
 
 [includeIf "hasconfig:remote.*.url:git@github.com:Quy-Khanh-IT/**"]
-	path = ~/.config/git/qkit.config
+  path = ~/.config/git/qkit.config
+
+[includeIf "hasconfig:remote.*.url:git@github.com-bluesg:BlueSG-2/**"]
+  path = ~/.config/git/bluesg.config
+
+[includeIf "hasconfig:remote.upstream.url:ssh.dev.azure.com:v3/abudhabiports/TTEK-BorderVision/**"]
+  path = ~/.config/git/maqta.config
+
+[maintenance]
+	repo = /home/cko/drives/dev/contributes/alacritty
+	repo = /home/cko/code/Projects/ttekvn/bd-vision-fe
+	repo = /home/cko/code/Projects/bluesg/stations-service
